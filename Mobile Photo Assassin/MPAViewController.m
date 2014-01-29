@@ -60,12 +60,14 @@
 
 - (IBAction)unwindToWelcome:(UIStoryboardSegue *)segue
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                    message:@"You are now signed up!"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+    if([segue.identifier isEqualToString:@"logIn"]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:@"You are now signed up!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     self.email.text = self.currentUser.email;
     self.password.text = self.currentUser.password;
     [self.email becomeFirstResponder];
@@ -93,13 +95,13 @@
         [alert show];
         return;
     }
-    UITabBarController *tabVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabVC"];
-    MPAHomeViewController *homeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
-
-    homeVC.user = self.currentUser;
-    [self presentViewController:tabVC
-                       animated:YES
-                     completion:nil];
+    
+    if([self.email.text isEqualToString:@"user"]){
+        [self performSegueWithIdentifier:@"noGame" sender:nil];
+    }
+    else{
+        [self performSegueWithIdentifier:@"logIn" sender:nil];
+    }
 }
 
 - (IBAction)SignUpTapped:(UIButton *)sender {

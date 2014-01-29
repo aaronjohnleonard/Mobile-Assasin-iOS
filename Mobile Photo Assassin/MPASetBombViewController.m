@@ -30,7 +30,6 @@
     self.items = [[NSArray alloc]initWithObjects:@"item1", @"item2", @"item3", @"item4", nil];
     self.location.delegate = self;
     self.location.dataSource = self;
-    NSLog(@"numRows: %ld, firstTitle: %@", (long)[self pickerView:self.location numberOfRowsInComponent:1],[self pickerView:self.location titleForRow:1 forComponent:0]);
 }
 
 - (void)didReceiveMemoryWarning

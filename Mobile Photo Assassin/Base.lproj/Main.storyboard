@@ -47,7 +47,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jfW-Wp-udt" kind="modal" identifier="logIn" modalTransitionStyle="crossDissolve" id="1fr-vX-ByN"/>
+                                    <action selector="LoginTapped" destination="x5A-6p-PRh" eventType="touchUpInside" id="PyI-r5-irQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdw-Lz-jVt">
@@ -68,11 +68,13 @@
                     <connections>
                         <outlet property="email" destination="bU8-fe-meC" id="K2u-X3-PQ4"/>
                         <outlet property="password" destination="1Hq-Kf-pNp" id="9O3-bL-qYg"/>
+                        <segue destination="H7b-IH-EGD" kind="modal" identifier="noGame" id="si3-Ai-qoW"/>
+                        <segue destination="jfW-Wp-udt" kind="modal" identifier="logIn" id="Wsj-Ii-Xtx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="-105"/>
+            <point key="canvasLocation" x="-33" y="-59"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="oFq-dP-eBu">
@@ -141,6 +143,34 @@
             </objects>
             <point key="canvasLocation" x="423" y="-59"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="U48-aY-HFt">
+            <objects>
+                <viewController id="H7b-IH-EGD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d50-Xj-tLJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="gI2-4l-yNe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="usT-Vl-d1o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ad-PY-WrE">
+                                <rect key="frame" x="103" y="153" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start New Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="o6k-LL-r7w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHe-aI-ahO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="508" y="-721"/>
+        </scene>
         <!--View Controller - Shoot Target-->
         <scene sceneID="bWA-Qe-yc9">
             <objects>
@@ -193,6 +223,9 @@
                                 <state key="normal" title="Quit Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="H7b-IH-EGD" kind="modal" identifier="quit" modalTransitionStyle="crossDissolve" id="KGc-VW-ATc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Max Debaltzo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvx-xz-qrT">
                                 <rect key="frame" x="40" y="205" width="240" height="59"/>
@@ -259,7 +292,7 @@
                                     <!--1970-01-01 11:00:00 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -277,7 +310,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cys-CE-LxH">
@@ -341,4 +374,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="KGc-VW-ATc"/>
+    </inferredMetricsTieBreakers>
 </document>

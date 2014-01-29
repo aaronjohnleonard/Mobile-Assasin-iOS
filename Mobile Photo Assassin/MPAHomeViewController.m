@@ -18,6 +18,34 @@
 
 @implementation MPAHomeViewController
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    
+    if([identifier isEqualToString:@"quit"]){
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:@"Are you sure?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"No"
+                                              otherButtonTitles:@"Yes", nil];
+        [alert show];
+    }
+    
+    return NO;
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	// 1 = Tapped yes
+	if (buttonIndex == 1)
+	{
+		[self performSegueWithIdentifier:@"quit" sender:self];
+	}
+}
+
+- (IBAction)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
