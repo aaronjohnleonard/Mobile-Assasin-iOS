@@ -43,7 +43,7 @@
 }
 
 - (IBAction)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -85,7 +85,9 @@
 
 - (IBAction)LogoutTapped {
     MPAViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
-    [self presentViewController:loginVC animated:YES completion:nil];
+    [self presentViewController:loginVC
+                       animated:YES
+                     completion:nil];
 }
 
 @end

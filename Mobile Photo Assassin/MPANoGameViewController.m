@@ -1,23 +1,19 @@
 //
-//  MPATabViewController.m
+//  MPANoGameViewController.m
 //  Mobile Photo Assassin
 //
-//  Created by Aaron Leonard on 1/19/14.
+//  Created by Aaron Leonard on 1/30/14.
 //  Copyright (c) 2014 Aaron Leonard. All rights reserved.
 //
 
-#import "MPATabViewController.h"
+#import "MPANoGameViewController.h"
 
-@interface MPATabViewController ()
+@interface MPANoGameViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end
 
-@implementation MPATabViewController
-
-- (IBAction)prepareAgainForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    NSLog(@"hello");
-}
+@implementation MPANoGameViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.usernameLabel.text = self.currentUser.email;
 }
 
 - (void)didReceiveMemoryWarning

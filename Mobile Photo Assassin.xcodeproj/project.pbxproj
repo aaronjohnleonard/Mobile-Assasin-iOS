@@ -21,7 +21,6 @@
 		3C7195331888A04700AB4A01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7195151888A04700AB4A01 /* UIKit.framework */; };
 		3C71953B1888A04700AB4A01 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C7195391888A04700AB4A01 /* InfoPlist.strings */; };
 		3C71953D1888A04700AB4A01 /* Mobile_Photo_AssassinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71953C1888A04700AB4A01 /* Mobile_Photo_AssassinTests.m */; };
-		3C7195471888A4B100AB4A01 /* Join.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C7195461888A4B100AB4A01 /* Join.png */; };
 		3C71958E1889E99700AB4A01 /* MPAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71958D1889E99700AB4A01 /* MPAHomeViewController.m */; };
 		3C719591188A1DA000AB4A01 /* MPASignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719590188A1DA000AB4A01 /* MPASignUpViewController.m */; };
 		3C719594188A5AC400AB4A01 /* MPAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719593188A5AC400AB4A01 /* MPAUser.m */; };
@@ -29,6 +28,8 @@
 		3C719599188CC4EF00AB4A01 /* house_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C719598188CC4EF00AB4A01 /* house_black.png */; };
 		3C71959C188CEACE00AB4A01 /* MPATabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71959B188CEACE00AB4A01 /* MPATabViewController.m */; };
 		3C71959F188DD4D600AB4A01 /* MPALocationPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71959E188DD4D600AB4A01 /* MPALocationPicker.m */; };
+		3C94D430189AA6BE009E0E46 /* MPANoGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */; };
+		3C94D432189AC0A7009E0E46 /* Join.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C94D431189AC0A7009E0E46 /* Join.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +62,6 @@
 		3C7195381888A04700AB4A01 /* Mobile Photo AssassinTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mobile Photo AssassinTests-Info.plist"; sourceTree = "<group>"; };
 		3C71953A1888A04700AB4A01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C71953C1888A04700AB4A01 /* Mobile_Photo_AssassinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mobile_Photo_AssassinTests.m; sourceTree = "<group>"; };
-		3C7195461888A4B100AB4A01 /* Join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Join.png; path = ../../Downloads/Join.png; sourceTree = "<group>"; };
 		3C71958C1889E99700AB4A01 /* MPAHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAHomeViewController.h; sourceTree = "<group>"; };
 		3C71958D1889E99700AB4A01 /* MPAHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAHomeViewController.m; sourceTree = "<group>"; };
 		3C71958F188A1DA000AB4A01 /* MPASignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPASignUpViewController.h; sourceTree = "<group>"; };
@@ -75,6 +75,9 @@
 		3C71959B188CEACE00AB4A01 /* MPATabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPATabViewController.m; sourceTree = "<group>"; };
 		3C71959D188DD4D600AB4A01 /* MPALocationPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPALocationPicker.h; sourceTree = "<group>"; };
 		3C71959E188DD4D600AB4A01 /* MPALocationPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPALocationPicker.m; sourceTree = "<group>"; };
+		3C94D42E189AA6BE009E0E46 /* MPANoGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPANoGameViewController.h; sourceTree = "<group>"; };
+		3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPANoGameViewController.m; sourceTree = "<group>"; };
+		3C94D431189AC0A7009E0E46 /* Join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Join.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,8 @@
 				3C71958D1889E99700AB4A01 /* MPAHomeViewController.m */,
 				3C7195261888A04700AB4A01 /* MPAViewController.h */,
 				3C7195271888A04700AB4A01 /* MPAViewController.m */,
+				3C94D42E189AA6BE009E0E46 /* MPANoGameViewController.h */,
+				3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */,
 				3C7195291888A04700AB4A01 /* Images.xcassets */,
 				3C7195181888A04700AB4A01 /* Supporting Files */,
 			);
@@ -160,7 +165,7 @@
 		3C7195181888A04700AB4A01 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3C7195461888A4B100AB4A01 /* Join.png */,
+				3C94D431189AC0A7009E0E46 /* Join.png */,
 				3C719598188CC4EF00AB4A01 /* house_black.png */,
 				3C7195191888A04700AB4A01 /* Mobile Photo Assassin-Info.plist */,
 				3C71951A1888A04700AB4A01 /* InfoPlist.strings */,
@@ -268,8 +273,8 @@
 				3C71952A1888A04700AB4A01 /* Images.xcassets in Resources */,
 				3C71951C1888A04700AB4A01 /* InfoPlist.strings in Resources */,
 				3C7195251888A04700AB4A01 /* Main.storyboard in Resources */,
+				3C94D432189AC0A7009E0E46 /* Join.png in Resources */,
 				3C719599188CC4EF00AB4A01 /* house_black.png in Resources */,
-				3C7195471888A4B100AB4A01 /* Join.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +299,7 @@
 				3C719594188A5AC400AB4A01 /* MPAUser.m in Sources */,
 				3C719591188A1DA000AB4A01 /* MPASignUpViewController.m in Sources */,
 				3C71951E1888A04700AB4A01 /* main.m in Sources */,
+				3C94D430189AA6BE009E0E46 /* MPANoGameViewController.m in Sources */,
 				3C71959C188CEACE00AB4A01 /* MPATabViewController.m in Sources */,
 				3C7195221888A04700AB4A01 /* MPAAppDelegate.m in Sources */,
 				3C7195281888A04700AB4A01 /* MPAViewController.m in Sources */,
@@ -505,6 +511,7 @@
 				3C7195421888A04700AB4A01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C7195431888A04700AB4A01 /* Build configuration list for PBXNativeTarget "Mobile Photo AssassinTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +520,7 @@
 				3C7195451888A04700AB4A01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

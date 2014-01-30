@@ -10,6 +10,7 @@
 #import "MPAHomeViewController.h"
 #import "MPASignUpViewController.h"
 #import "MPATabViewController.h"
+#import "MPANoGameViewController.h"
 
 @interface MPAViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *email;
@@ -53,21 +54,15 @@
         MPATabViewController *tabVC = segue.destinationViewController;
         tabVC.currentUser = self.currentUser;
     }
-    else if([segue.identifier isEqualToString:@"signUp"]){
-        
+    else if([segue.identifier isEqualToString:@"noGame"]){
+        self.currentUser.email = self.email.text;
+        MPANoGameViewController *noGameVC = segue.destinationViewController;
+        noGameVC.currentUser = self.currentUser;
     }
 }
 
 - (IBAction)unwindToWelcome:(UIStoryboardSegue *)segue
 {
-    if([segue.identifier isEqualToString:@"logIn"]){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                        message:@"You are now signed up!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
     self.email.text = self.currentUser.email;
     self.password.text = self.currentUser.password;
     [self.email becomeFirstResponder];
@@ -97,10 +92,12 @@
     }
     
     if([self.email.text isEqualToString:@"user"]){
-        [self performSegueWithIdentifier:@"noGame" sender:nil];
+        [self performSegueWithIdentifier:@"noGame"
+                                  sender:self];
     }
     else{
-        [self performSegueWithIdentifier:@"logIn" sender:nil];
+        [self performSegueWithIdentifier:@"logIn"
+                                  sender:self];
     }
 }
 
@@ -110,6 +107,7 @@
     signUpVC.upcomingUser = self.currentUser;
     [self presentViewController:signUpVC animated:YES completion:nil];
 }
+
 
 @end
 
