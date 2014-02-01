@@ -30,6 +30,7 @@
 		3C71959F188DD4D600AB4A01 /* MPALocationPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71959E188DD4D600AB4A01 /* MPALocationPicker.m */; };
 		3C94D430189AA6BE009E0E46 /* MPANoGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */; };
 		3C94D432189AC0A7009E0E46 /* Join.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C94D431189AC0A7009E0E46 /* Join.png */; };
+		3C94D435189B63F7009E0E46 /* MPATestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C94D434189B63F7009E0E46 /* MPATestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		3C94D42E189AA6BE009E0E46 /* MPANoGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPANoGameViewController.h; sourceTree = "<group>"; };
 		3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPANoGameViewController.m; sourceTree = "<group>"; };
 		3C94D431189AC0A7009E0E46 /* Join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Join.png; sourceTree = "<group>"; };
+		3C94D433189B63F7009E0E46 /* MPATestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPATestViewController.h; sourceTree = "<group>"; };
+		3C94D434189B63F7009E0E46 /* MPATestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPATestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				3C7195201888A04700AB4A01 /* MPAAppDelegate.h */,
 				3C7195211888A04700AB4A01 /* MPAAppDelegate.m */,
 				3C7195231888A04700AB4A01 /* Main.storyboard */,
+				3C94D433189B63F7009E0E46 /* MPATestViewController.h */,
+				3C94D434189B63F7009E0E46 /* MPATestViewController.m */,
 				3C71959D188DD4D600AB4A01 /* MPALocationPicker.h */,
 				3C71959E188DD4D600AB4A01 /* MPALocationPicker.m */,
 				3C71959A188CEACE00AB4A01 /* MPATabViewController.h */,
@@ -303,6 +308,7 @@
 				3C71959C188CEACE00AB4A01 /* MPATabViewController.m in Sources */,
 				3C7195221888A04700AB4A01 /* MPAAppDelegate.m in Sources */,
 				3C7195281888A04700AB4A01 /* MPAViewController.m in Sources */,
+				3C94D435189B63F7009E0E46 /* MPATestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

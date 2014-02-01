@@ -17,5 +17,10 @@
 @property (strong, nonatomic) MPAUser *target;
 
 -(id) initWithName:(NSString *)name;
+-(id) initWithFirstName:(NSString *)firstName
+               lastName:(NSString *)lastName
+                  email:(NSString *)email
+               password:(NSString *)password
+                 target:(MPAUser *)target;
 
 @end

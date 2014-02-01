@@ -81,6 +81,7 @@
 }
 
 - (IBAction)LoginTapped {
+    // Verify user has actually inputted information
     if([self.email.text  isEqualToString: @""] || [self.password.text isEqualToString:@""]){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                         message:@"Please enter your information"
@@ -91,12 +92,49 @@
         return;
     }
     
-    if([self.email.text isEqualToString:@"user"]){
-        [self performSegueWithIdentifier:@"noGame"
-                                  sender:self];
+    // Query server using inputted credentials
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://leonard.tk/app/mobileAssassin/%@/%@",self.email.text,self.password.text]]
+                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                            timeoutInterval:30];
+    // Fetch the JSON response
+    NSData *urlData;
+    NSURLResponse *response;
+    NSError *error;
+    // Make synchronous request
+    urlData = [NSURLConnection sendSynchronousRequest:urlRequest
+                                    returningResponse:&response
+                                                error:&error];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:nil];
+    
+    // Get the user information
+    json = [json valueForKey:@"user"];
+    
+    // If the json doesn't have user information, send alert to user
+    if (json == nil) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:@"Invalid credentials"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
+    // Create new user using json from server
+    MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[json valueForKey:@"firstName"]
+                                                     lastName:[json valueForKey:@"lastName"]
+                                                        email:[json valueForKey:@"email"]
+                                                     password:[json valueForKey:@"password"]
+                                                       target:[[MPAUser alloc] initWithName:@"Bill"]];
+    
+    // If the user is in a game, go to main tab scene, otherwise go to noGame scene
+    if ([[json valueForKey:@"game"] isEqualToString:@"true"]) {
+        MPATabViewController *tabVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabVC"];
+        tabVC.currentUser = currentUser;
+        [self presentViewController:tabVC animated:YES completion:nil];
     }
     else{
-        [self performSegueWithIdentifier:@"logIn"
+        [self performSegueWithIdentifier:@"noGame"
                                   sender:self];
     }
 }

@@ -84,10 +84,12 @@
 }
 
 - (IBAction)LogoutTapped {
-    MPAViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+    [self performSegueWithIdentifier:@"logout" sender:self];
+    /*MPAViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"logout"];
     [self presentViewController:loginVC
                        animated:YES
                      completion:nil];
+     */
 }
 
 @end
