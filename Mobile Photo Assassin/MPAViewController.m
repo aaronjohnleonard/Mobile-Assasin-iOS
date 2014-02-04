@@ -72,6 +72,13 @@
 {
     [super viewDidLoad];
     self.currentUser = [[MPAUser alloc]init];
+    self.email.delegate = self;
+    self.password.delegate = self;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 - (void)didReceiveMemoryWarning

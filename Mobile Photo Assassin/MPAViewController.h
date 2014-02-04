@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MPAUser.h"
 
-@interface MPAViewController : UIViewController
+@interface MPAViewController : UIViewController <UITextViewDelegate>
 
 @property (strong, nonatomic) MPAUser *currentUser;
 
