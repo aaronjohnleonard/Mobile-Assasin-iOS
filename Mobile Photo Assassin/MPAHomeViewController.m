@@ -11,7 +11,7 @@
 #import "MPATabViewController.h"
 
 @interface MPAHomeViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *target;
 @property (strong, nonatomic) MPAUser *currentUser;
 @end

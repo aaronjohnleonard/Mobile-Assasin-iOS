@@ -9,7 +9,7 @@
 #import "MPANoGameViewController.h"
 
 @interface MPANoGameViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end
 

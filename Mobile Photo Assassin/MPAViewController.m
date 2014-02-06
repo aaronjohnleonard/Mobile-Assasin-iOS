@@ -12,9 +12,9 @@
 #import "MPATabViewController.h"
 #import "MPANoGameViewController.h"
 
-@interface MPAViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *email;
-@property (weak, nonatomic) IBOutlet UITextField *password;
+@interface MPAViewController()
+@property (strong, nonatomic) IBOutlet UITextField *email;
+@property (strong, nonatomic) IBOutlet UITextField *password;
 
 @end
 
@@ -72,8 +72,8 @@
 {
     [super viewDidLoad];
     self.currentUser = [[MPAUser alloc]init];
-    self.email.delegate = self;
-    self.password.delegate = self;
+    self.email.delegate = (id)self;
+    self.password.delegate = (id)self;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

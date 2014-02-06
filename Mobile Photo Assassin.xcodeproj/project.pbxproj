@@ -31,6 +31,7 @@
 		3C94D430189AA6BE009E0E46 /* MPANoGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */; };
 		3C94D432189AC0A7009E0E46 /* Join.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C94D431189AC0A7009E0E46 /* Join.png */; };
 		3C94D435189B63F7009E0E46 /* MPATestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C94D434189B63F7009E0E46 /* MPATestViewController.m */; };
+		64A532F618A1815F009139F8 /* MPAShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A532F518A1815F009139F8 /* MPAShootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		3C94D431189AC0A7009E0E46 /* Join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Join.png; sourceTree = "<group>"; };
 		3C94D433189B63F7009E0E46 /* MPATestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPATestViewController.h; sourceTree = "<group>"; };
 		3C94D434189B63F7009E0E46 /* MPATestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPATestViewController.m; sourceTree = "<group>"; };
+		64A532F418A1815F009139F8 /* MPAShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAShootViewController.h; sourceTree = "<group>"; };
+		64A532F518A1815F009139F8 /* MPAShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAShootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,8 @@
 				3C71958C1889E99700AB4A01 /* MPAHomeViewController.h */,
 				3C71958D1889E99700AB4A01 /* MPAHomeViewController.m */,
 				3C7195261888A04700AB4A01 /* MPAViewController.h */,
+				64A532F418A1815F009139F8 /* MPAShootViewController.h */,
+				64A532F518A1815F009139F8 /* MPAShootViewController.m */,
 				3C7195271888A04700AB4A01 /* MPAViewController.m */,
 				3C94D42E189AA6BE009E0E46 /* MPANoGameViewController.h */,
 				3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */,
@@ -307,6 +312,7 @@
 				3C94D430189AA6BE009E0E46 /* MPANoGameViewController.m in Sources */,
 				3C71959C188CEACE00AB4A01 /* MPATabViewController.m in Sources */,
 				3C7195221888A04700AB4A01 /* MPAAppDelegate.m in Sources */,
+				64A532F618A1815F009139F8 /* MPAShootViewController.m in Sources */,
 				3C7195281888A04700AB4A01 /* MPAViewController.m in Sources */,
 				3C94D435189B63F7009E0E46 /* MPATestViewController.m in Sources */,
 			);
@@ -435,6 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mobile Photo Assassin/Mobile Photo Assassin-Prefix.pch";
 				INFOPLIST_FILE = "Mobile Photo Assassin/Mobile Photo Assassin-Info.plist";
@@ -448,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mobile Photo Assassin/Mobile Photo Assassin-Prefix.pch";
 				INFOPLIST_FILE = "Mobile Photo Assassin/Mobile Photo Assassin-Info.plist";

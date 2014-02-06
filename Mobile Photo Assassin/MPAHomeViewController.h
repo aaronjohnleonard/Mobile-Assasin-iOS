@@ -10,6 +10,6 @@
 #import "MPAUser.h"
 
 @interface MPAHomeViewController : UIViewController
-@property (weak, nonatomic) NSString *username;
+@property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) MPAUser *user;
 @end

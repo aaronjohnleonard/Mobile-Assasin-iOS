@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MPAUser : NSObject
+@interface MPAUser : NSObject <UITextViewDelegate>
 
 @property (strong, nonatomic) NSString *firstName;
 @property (strong, nonatomic) NSString *lastName;

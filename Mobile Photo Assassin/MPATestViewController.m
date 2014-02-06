@@ -9,10 +9,10 @@
 #import "MPATestViewController.h"
 
 @interface MPATestViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *firstName;
-@property (weak, nonatomic) IBOutlet UILabel *lastName;
-@property (weak, nonatomic) IBOutlet UILabel *email;
-@property (weak, nonatomic) IBOutlet UILabel *password;
+@property (strong, nonatomic) IBOutlet UILabel *firstName;
+@property (strong, nonatomic) IBOutlet UILabel *lastName;
+@property (strong, nonatomic) IBOutlet UILabel *email;
+@property (strong, nonatomic) IBOutlet UILabel *password;
 
 @end
 
