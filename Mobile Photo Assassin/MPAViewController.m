@@ -92,6 +92,7 @@
         return;
     }
     
+    
     // Query server using inputted credentials
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://leonard.tk/app/mobileAssassin/%@/%@",self.email.text,self.password.text]]
                                                 cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
@@ -137,6 +138,7 @@
         [self performSegueWithIdentifier:@"noGame"
                                   sender:self];
     }
+    
 }
 
 - (IBAction)SignUpTapped:(UIButton *)sender {
