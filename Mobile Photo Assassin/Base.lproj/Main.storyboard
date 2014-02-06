@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdw-Lz-jVt">
-                                <rect key="frame" x="126" y="477" width="69" height="30"/>
+                                <rect key="frame" x="126" y="488" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="or sign up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -355,7 +355,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Max Debaltzo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvx-xz-qrT">
-                                <rect key="frame" x="40" y="205" width="240" height="59"/>
+                                <rect key="frame" x="40" y="151" width="240" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="38"/>
                                 <nil key="highlightedColor"/>
@@ -377,6 +377,10 @@
                                     <segue destination="igW-ub-L3b" kind="unwind" unwindAction="unwindToWelcome:" id="azK-W6-PmF"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GDu-wr-Rra">
+                                <rect key="frame" x="40" y="218" width="240" height="226"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -384,6 +388,7 @@
                     <navigationItem key="navigationItem" id="d2i-Lu-zor"/>
                     <connections>
                         <outlet property="target" destination="gvx-xz-qrT" id="Va2-kw-ttU"/>
+                        <outlet property="targetImage" destination="GDu-wr-Rra" id="ojd-Mh-dP4"/>
                         <outlet property="usernameLabel" destination="d3V-OI-rEX" id="zdD-Sr-JH8"/>
                         <segue destination="igW-ub-L3b" kind="unwind" identifier="logout" unwindAction="unwindToWelcome:" id="U7Z-QT-W63"/>
                     </connections>
