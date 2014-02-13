@@ -8,7 +8,7 @@
 
 #import "MPAHomeViewController.h"
 #import "MPAViewController.h"
-#import "MPATabViewController.h"
+#import "MPAPageViewController.h"
 
 @interface MPAHomeViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -59,8 +59,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    MPATabViewController *tabBar = (MPATabViewController *)self.tabBarController;
-    self.currentUser = tabBar.currentUser;
     
     self.usernameLabel.text = self.currentUser.email;
     self.target.text = self.currentUser.target.firstName;
@@ -74,9 +72,11 @@
     
     UIImage *image = [UIImage imageWithData: imagedata];
     
-    [self saveImageToServer];
+    //[self saveImageToServer];
     
     [self.targetImage setImage:theImage];
+    
+    
     
 }
 
@@ -116,66 +116,29 @@
     urlData = [NSURLConnection sendSynchronousRequest:urlRequest
                                     returningResponse:&response
                                                 error:&error];
-    /*
+
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Join" ofType:@"png"];
-    UIImage *theImage = [UIImage imageWithContentsOfFile:path];
-    NSData *imageData = UIImageJPEGRepresentation(theImage,90);
-    NSString *urlString = @"leonard.tk/app/mobileAssassin/aaronleonard/password/";
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]
-                                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                                                       timeoutInterval:30];
-    //[request setURL:[NSURL URLWithString:urlString]];
-    //[request setHTTPMethod:@"POST"];
+    return [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];
     
-    /*
-    NSMutableData *body = [NSMutableData data];
-    [body appendData:[NSData dataWithData:imageData]];
-    [request setHTTPBody:body];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     
-     
-    NSURLResponse *response;
-    NSError *error;
-    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", returnString);
-    */
-    /*
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Join" ofType:@"png"];
-    UIImage *theImage = [UIImage imageWithContentsOfFile:path];
-    NSData *imageData = UIImageJPEGRepresentation(theImage,90);
-    //NSString *urlString = @"URL 1/upload.php";
-    NSString *urlString = @"leonard.tk/app/uploadImage";
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:urlString]];
-    [request setHTTPMethod:@"POST"];
+    return nil;
     
-    NSString *boundary = @"_187934598797439873422234";
-    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
-    [request setValue:contentType forHTTPHeaderField: @"Content-Type"];
-    *///[request setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
-    /*[request setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.26.14 (KHTML, like Gecko) Version/6.0.1 Safari/536.26.14" forHTTPHeaderField:@"User-Agent"];
-    [request setValue:@"http://google.com" forHTTPHeaderField:@"Origin"];
-    
-    NSMutableData *body = [NSMutableData data];
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"picture\"; filename=\"%@.jpg\"\r\n", @"TESTTEST"] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [body appendData:[NSData dataWithData:imageData]];
-    
-    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    
-    [request setHTTPBody:body];
-    [request addValue:[NSString stringWithFormat:@"%lu", (unsigned long)[body length]] forHTTPHeaderField:@"Content-Length"];
-    
-    
-    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", returnString);
-    */
+}
+
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
+    // The number of items reflected in the page indicator.
+    return 1;
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
+    // The selected item reflected in the page indicator.
+    return 0;
 }
 
 

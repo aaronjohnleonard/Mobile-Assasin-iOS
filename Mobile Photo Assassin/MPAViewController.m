@@ -9,7 +9,7 @@
 #import "MPAViewController.h"
 #import "MPAHomeViewController.h"
 #import "MPASignUpViewController.h"
-#import "MPATabViewController.h"
+#import "MPAPageViewController.h"
 #import "MPANoGameViewController.h"
 
 @interface MPAViewController()
@@ -51,8 +51,6 @@
         self.currentUser.target = [[MPAUser alloc] initWithName:@"Max"];
         self.currentUser.email = self.email.text;
         
-        MPATabViewController *tabVC = segue.destinationViewController;
-        tabVC.currentUser = self.currentUser;
     }
     else if([segue.identifier isEqualToString:@"noGame"]){
         self.currentUser.email = self.email.text;
@@ -137,9 +135,9 @@
     
     // If the user is in a game, go to main tab scene, otherwise go to noGame scene
     if ([[json valueForKey:@"game"] isEqualToString:@"true"]) {
-        MPATabViewController *tabVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabVC"];
-        tabVC.currentUser = currentUser;
-        [self presentViewController:tabVC animated:YES completion:nil];
+        MPAPageViewController *pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pageVC"];
+        //homeVC.currentUser = currentUser;
+        [self presentViewController:pageVC animated:YES completion:nil];
     }
     else{
         [self performSegueWithIdentifier:@"noGame"

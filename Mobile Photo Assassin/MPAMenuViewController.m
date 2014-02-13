@@ -1,23 +1,18 @@
 //
-//  MPATabViewController.m
+//  MPAMenuViewController.m
 //  Mobile Photo Assassin
 //
-//  Created by Aaron Leonard on 1/19/14.
+//  Created by Aaron Leonard on 2/8/14.
 //  Copyright (c) 2014 Aaron Leonard. All rights reserved.
 //
 
-#import "MPATabViewController.h"
+#import "MPAMenuViewController.h"
 
-@interface MPATabViewController ()
+@interface MPAMenuViewController ()
 
 @end
 
-@implementation MPATabViewController
-
-- (IBAction)prepareAgainForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    NSLog(@"hello");
-}
+@implementation MPAMenuViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

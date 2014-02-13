@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MPAUser.h"
 
-@interface MPAHomeViewController : UIViewController
+@interface MPAHomeViewController : UIViewController <UIPageViewControllerDataSource>
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) MPAUser *user;
 @end

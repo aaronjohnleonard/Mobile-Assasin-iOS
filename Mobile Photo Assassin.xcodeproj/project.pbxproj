@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C64685B18A6E06F00C545E7 /* MPAPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64685A18A6E06F00C545E7 /* MPAPageViewController.m */; };
+		3C64685E18A6E2CF00C545E7 /* MPAMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64685D18A6E2CF00C545E7 /* MPAMenuViewController.m */; };
 		3C7195121888A04700AB4A01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7195111888A04700AB4A01 /* Foundation.framework */; };
 		3C7195141888A04700AB4A01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7195131888A04700AB4A01 /* CoreGraphics.framework */; };
 		3C7195161888A04700AB4A01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7195151888A04700AB4A01 /* UIKit.framework */; };
@@ -24,9 +26,7 @@
 		3C71958E1889E99700AB4A01 /* MPAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71958D1889E99700AB4A01 /* MPAHomeViewController.m */; };
 		3C719591188A1DA000AB4A01 /* MPASignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719590188A1DA000AB4A01 /* MPASignUpViewController.m */; };
 		3C719594188A5AC400AB4A01 /* MPAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719593188A5AC400AB4A01 /* MPAUser.m */; };
-		3C719597188B1F1000AB4A01 /* MPASetBombViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719596188B1F1000AB4A01 /* MPASetBombViewController.m */; };
 		3C719599188CC4EF00AB4A01 /* house_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C719598188CC4EF00AB4A01 /* house_black.png */; };
-		3C71959C188CEACE00AB4A01 /* MPATabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71959B188CEACE00AB4A01 /* MPATabViewController.m */; };
 		3C71959F188DD4D600AB4A01 /* MPALocationPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71959E188DD4D600AB4A01 /* MPALocationPicker.m */; };
 		3C94D430189AA6BE009E0E46 /* MPANoGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */; };
 		3C94D432189AC0A7009E0E46 /* Join.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C94D431189AC0A7009E0E46 /* Join.png */; };
@@ -45,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C64685918A6E06F00C545E7 /* MPAPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAPageViewController.h; sourceTree = "<group>"; };
+		3C64685A18A6E06F00C545E7 /* MPAPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAPageViewController.m; sourceTree = "<group>"; };
+		3C64685C18A6E2CF00C545E7 /* MPAMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAMenuViewController.h; sourceTree = "<group>"; };
+		3C64685D18A6E2CF00C545E7 /* MPAMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAMenuViewController.m; sourceTree = "<group>"; };
 		3C71950E1888A04700AB4A01 /* Mobile Photo Assassin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Photo Assassin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C7195111888A04700AB4A01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C7195131888A04700AB4A01 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -70,11 +74,7 @@
 		3C719590188A1DA000AB4A01 /* MPASignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPASignUpViewController.m; sourceTree = "<group>"; };
 		3C719592188A5AC400AB4A01 /* MPAUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAUser.h; path = Model/MPAUser.h; sourceTree = "<group>"; };
 		3C719593188A5AC400AB4A01 /* MPAUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPAUser.m; path = Model/MPAUser.m; sourceTree = "<group>"; };
-		3C719595188B1F1000AB4A01 /* MPASetBombViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPASetBombViewController.h; sourceTree = "<group>"; };
-		3C719596188B1F1000AB4A01 /* MPASetBombViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPASetBombViewController.m; sourceTree = "<group>"; };
 		3C719598188CC4EF00AB4A01 /* house_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_black.png; sourceTree = "<group>"; };
-		3C71959A188CEACE00AB4A01 /* MPATabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPATabViewController.h; sourceTree = "<group>"; };
-		3C71959B188CEACE00AB4A01 /* MPATabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPATabViewController.m; sourceTree = "<group>"; };
 		3C71959D188DD4D600AB4A01 /* MPALocationPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPALocationPicker.h; sourceTree = "<group>"; };
 		3C71959E188DD4D600AB4A01 /* MPALocationPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPALocationPicker.m; sourceTree = "<group>"; };
 		3C94D42E189AA6BE009E0E46 /* MPANoGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPANoGameViewController.h; sourceTree = "<group>"; };
@@ -150,24 +150,24 @@
 				3C94D434189B63F7009E0E46 /* MPATestViewController.m */,
 				3C71959D188DD4D600AB4A01 /* MPALocationPicker.h */,
 				3C71959E188DD4D600AB4A01 /* MPALocationPicker.m */,
-				3C71959A188CEACE00AB4A01 /* MPATabViewController.h */,
-				3C71959B188CEACE00AB4A01 /* MPATabViewController.m */,
-				3C719595188B1F1000AB4A01 /* MPASetBombViewController.h */,
-				3C719596188B1F1000AB4A01 /* MPASetBombViewController.m */,
 				3C719592188A5AC400AB4A01 /* MPAUser.h */,
 				3C719593188A5AC400AB4A01 /* MPAUser.m */,
 				3C71958F188A1DA000AB4A01 /* MPASignUpViewController.h */,
 				3C719590188A1DA000AB4A01 /* MPASignUpViewController.m */,
 				3C71958C1889E99700AB4A01 /* MPAHomeViewController.h */,
 				3C71958D1889E99700AB4A01 /* MPAHomeViewController.m */,
-				3C7195261888A04700AB4A01 /* MPAViewController.h */,
 				64A532F418A1815F009139F8 /* MPAShootViewController.h */,
 				64A532F518A1815F009139F8 /* MPAShootViewController.m */,
+				3C7195261888A04700AB4A01 /* MPAViewController.h */,
 				3C7195271888A04700AB4A01 /* MPAViewController.m */,
 				3C94D42E189AA6BE009E0E46 /* MPANoGameViewController.h */,
 				3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */,
+				3C64685918A6E06F00C545E7 /* MPAPageViewController.h */,
+				3C64685A18A6E06F00C545E7 /* MPAPageViewController.m */,
 				3C7195291888A04700AB4A01 /* Images.xcassets */,
 				3C7195181888A04700AB4A01 /* Supporting Files */,
+				3C64685C18A6E2CF00C545E7 /* MPAMenuViewController.h */,
+				3C64685D18A6E2CF00C545E7 /* MPAMenuViewController.m */,
 			);
 			path = "Mobile Photo Assassin";
 			sourceTree = "<group>";
@@ -303,15 +303,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C719597188B1F1000AB4A01 /* MPASetBombViewController.m in Sources */,
 				3C71958E1889E99700AB4A01 /* MPAHomeViewController.m in Sources */,
 				3C71959F188DD4D600AB4A01 /* MPALocationPicker.m in Sources */,
 				3C719594188A5AC400AB4A01 /* MPAUser.m in Sources */,
 				3C719591188A1DA000AB4A01 /* MPASignUpViewController.m in Sources */,
 				3C71951E1888A04700AB4A01 /* main.m in Sources */,
 				3C94D430189AA6BE009E0E46 /* MPANoGameViewController.m in Sources */,
-				3C71959C188CEACE00AB4A01 /* MPATabViewController.m in Sources */,
+				3C64685B18A6E06F00C545E7 /* MPAPageViewController.m in Sources */,
 				3C7195221888A04700AB4A01 /* MPAAppDelegate.m in Sources */,
+				3C64685E18A6E2CF00C545E7 /* MPAMenuViewController.m in Sources */,
 				64A532F618A1815F009139F8 /* MPAShootViewController.m in Sources */,
 				3C7195281888A04700AB4A01 /* MPAViewController.m in Sources */,
 				3C94D435189B63F7009E0E46 /* MPATestViewController.m in Sources */,
