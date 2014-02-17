@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) MPAUser *currentUser;
 
+- (IBAction)unwindToWelcome:(UIStoryboardSegue *)segue;
+
 @end

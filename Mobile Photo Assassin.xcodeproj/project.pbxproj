@@ -31,6 +31,7 @@
 		3C94D430189AA6BE009E0E46 /* MPANoGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */; };
 		3C94D432189AC0A7009E0E46 /* Join.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C94D431189AC0A7009E0E46 /* Join.png */; };
 		3C94D435189B63F7009E0E46 /* MPATestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C94D434189B63F7009E0E46 /* MPATestViewController.m */; };
+		3CB58C6018AD4DD5005313F7 /* MPAPageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB58C5F18AD4DD5005313F7 /* MPAPageDataSource.m */; };
 		64A532F618A1815F009139F8 /* MPAShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A532F518A1815F009139F8 /* MPAShootViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,8 @@
 		3C94D431189AC0A7009E0E46 /* Join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Join.png; sourceTree = "<group>"; };
 		3C94D433189B63F7009E0E46 /* MPATestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPATestViewController.h; sourceTree = "<group>"; };
 		3C94D434189B63F7009E0E46 /* MPATestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPATestViewController.m; sourceTree = "<group>"; };
+		3CB58C5E18AD4DD5005313F7 /* MPAPageDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAPageDataSource.h; sourceTree = "<group>"; };
+		3CB58C5F18AD4DD5005313F7 /* MPAPageDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAPageDataSource.m; sourceTree = "<group>"; };
 		64A532F418A1815F009139F8 /* MPAShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAShootViewController.h; sourceTree = "<group>"; };
 		64A532F518A1815F009139F8 /* MPAShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAShootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,10 +167,12 @@
 				3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */,
 				3C64685918A6E06F00C545E7 /* MPAPageViewController.h */,
 				3C64685A18A6E06F00C545E7 /* MPAPageViewController.m */,
-				3C7195291888A04700AB4A01 /* Images.xcassets */,
-				3C7195181888A04700AB4A01 /* Supporting Files */,
+				3CB58C5E18AD4DD5005313F7 /* MPAPageDataSource.h */,
+				3CB58C5F18AD4DD5005313F7 /* MPAPageDataSource.m */,
 				3C64685C18A6E2CF00C545E7 /* MPAMenuViewController.h */,
 				3C64685D18A6E2CF00C545E7 /* MPAMenuViewController.m */,
+				3C7195291888A04700AB4A01 /* Images.xcassets */,
+				3C7195181888A04700AB4A01 /* Supporting Files */,
 			);
 			path = "Mobile Photo Assassin";
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CB58C6018AD4DD5005313F7 /* MPAPageDataSource.m in Sources */,
 				3C71958E1889E99700AB4A01 /* MPAHomeViewController.m in Sources */,
 				3C71959F188DD4D600AB4A01 /* MPALocationPicker.m in Sources */,
 				3C719594188A5AC400AB4A01 /* MPAUser.m in Sources */,

@@ -13,7 +13,6 @@
 @interface MPAHomeViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *target;
-@property (strong, nonatomic) MPAUser *currentUser;
 @property (strong, nonatomic) IBOutlet UIImageView *targetImage;
 @end
 
@@ -44,7 +43,7 @@
 }
 
 - (IBAction)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    NSLog(@"preparing");
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -60,18 +59,18 @@
 {
     [super viewDidLoad];
     
-    self.usernameLabel.text = self.currentUser.email;
-    self.target.text = self.currentUser.target.firstName;
+    self.usernameLabel.text = self.username;
+    self.target.text = ((MPAUser*)self.user.targets[self.targetIndex]).firstName;
     
-    NSURL *imageurl = [NSURL URLWithString:@"http://leonard.tk/app/mobileAssassin/image"];
+    //NSURL *imageurl = [NSURL URLWithString:@"http://leonard.tk/app/mobileAssassin/image"];
     
-    NSData *imagedata = [[NSData alloc] initWithContentsOfURL:imageurl];
+    //NSData *imagedata = [[NSData alloc] initWithContentsOfURL:imageurl];
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Join" ofType:@"png"];
     UIImage *theImage = [UIImage imageWithContentsOfFile:path];
     
-    UIImage *image = [UIImage imageWithData: imagedata];
-    
+    //UIImage *image = [UIImage imageWithData: imagedata];
+        
     //[self saveImageToServer];
     
     [self.targetImage setImage:theImage];
@@ -98,9 +97,10 @@
     [self presentViewController: camera animated: YES completion:nil];
 }
 
-- (IBAction)LogoutTapped {
-    [self performSegueWithIdentifier:@"logout" sender:self];
+- (IBAction)logoutTapped:(id)sender {
+    [self.pageVC logoutTapped];
 }
+
 
 - (void)saveImageToServer {
     
@@ -117,28 +117,6 @@
                                     returningResponse:&response
                                                 error:&error];
 
-}
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    
-    return [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];
-    
-}
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    
-    return nil;
-    
-}
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    // The number of items reflected in the page indicator.
-    return 1;
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    // The selected item reflected in the page indicator.
-    return 0;
 }
 
 

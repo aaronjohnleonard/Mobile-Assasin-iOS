@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MPAUser.h"
+#import "MPAPageViewController.h"
 
-@interface MPAHomeViewController : UIViewController <UIPageViewControllerDataSource>
+@interface MPAHomeViewController : UIViewController
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) MPAUser *user;
+@property (strong, nonatomic) MPAPageViewController *pageVC;
+@property (nonatomic) NSInteger targetIndex;
 @end

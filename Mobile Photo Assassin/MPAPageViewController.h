@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPAUser.h"
+#import "MPAViewController.h"
 
 @interface MPAPageViewController : UIPageViewController
+
+@property (strong, nonatomic) MPAUser *currentUser;
+@property (strong, nonatomic) MPAViewController *loginVC;
+
+- (UIViewController*) before:(UIViewController*)controller;
+- (UIViewController*) after:(UIViewController*)controller;
+
+- (IBAction)logoutTapped;
 
 @end

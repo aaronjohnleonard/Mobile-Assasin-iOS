@@ -12,15 +12,13 @@
 
 @property (strong, nonatomic) NSString *firstName;
 @property (strong, nonatomic) NSString *lastName;
-@property (strong, nonatomic) NSString *email;
-@property (strong, nonatomic) NSString *password;
-@property (strong, nonatomic) MPAUser *target;
+@property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSArray *targets;
 
 -(id) initWithName:(NSString *)name;
 -(id) initWithFirstName:(NSString *)firstName
                lastName:(NSString *)lastName
-                  email:(NSString *)email
-               password:(NSString *)password
-                 target:(MPAUser *)target;
+               username:(NSString *)username
+                 targets:(NSArray *)targets;
 
 @end

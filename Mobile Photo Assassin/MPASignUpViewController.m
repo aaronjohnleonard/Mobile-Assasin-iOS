@@ -51,8 +51,7 @@
     }
     self.upcomingUser.firstName = self.name.text;
     self.upcomingUser.lastName = self.name.text;
-    self.upcomingUser.email = self.email.text;
-    self.upcomingUser.password = self.password.text;
+    self.upcomingUser.username = self.email.text;
 }
 
 @end

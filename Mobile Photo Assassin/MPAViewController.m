@@ -48,12 +48,12 @@
                                               otherButtonTitles:nil];
         [alert show];
         
-        self.currentUser.target = [[MPAUser alloc] initWithName:@"Max"];
-        self.currentUser.email = self.email.text;
+        self.currentUser.targets = [[NSArray alloc] initWithObjects: [[MPAUser alloc] initWithName:@"Max"], nil];
+        self.currentUser.username = self.email.text;
         
     }
     else if([segue.identifier isEqualToString:@"noGame"]){
-        self.currentUser.email = self.email.text;
+        self.currentUser.username = self.email.text;
         MPANoGameViewController *noGameVC = segue.destinationViewController;
         noGameVC.currentUser = self.currentUser;
     }
@@ -61,8 +61,7 @@
 
 - (IBAction)unwindToWelcome:(UIStoryboardSegue *)segue
 {
-    self.email.text = self.currentUser.email;
-    self.password.text = self.currentUser.password;
+    self.email.text = self.currentUser.username;
     [self.email becomeFirstResponder];
 }
 
@@ -96,27 +95,33 @@
         [alert show];
         return;
     }
+
+    NSString *post = [NSString stringWithFormat:@"username=%@&password=%@", self.email.text, self.password.text];
+    NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    [request setURL:[NSURL URLWithString:@"http://54.200.120.14:8080/member/authenticate"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    request.HTTPBody = postData;
     
-    // Query server using inputted credentials
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://leonard.tk/app/mobileAssassin/%@/%@",self.email.text,self.password.text]]
-                                                cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
-                                            timeoutInterval:30];
-    // Fetch the JSON response
     NSData *urlData;
     NSURLResponse *response;
     NSError *error;
     // Make synchronous request
-    urlData = [NSURLConnection sendSynchronousRequest:urlRequest
+    urlData = [NSURLConnection sendSynchronousRequest:request
                                     returningResponse:&response
                                                 error:&error];
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:nil];
     
-    // Get the user information
-    json = [json valueForKey:@"user"];
+    // NSLog(@"%@", [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding]);
+    
+    NSDictionary *info = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:nil];
+    
     
     // If the json doesn't have user information, send alert to user
-    if (json == nil) {
+    if (info == nil) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                         message:@"Invalid credentials"
                                                        delegate:nil
@@ -127,16 +132,16 @@
     }
     
     // Create new user using json from server
-    MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[json valueForKey:@"firstName"]
-                                                     lastName:[json valueForKey:@"lastName"]
-                                                        email:[json valueForKey:@"email"]
-                                                     password:[json valueForKey:@"password"]
-                                                       target:[[MPAUser alloc] initWithName:@"Bill"]];
+    MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[info valueForKey:@"firstName"]
+                                                     lastName:[info valueForKey:@"lastName"]
+                                                     username:[info valueForKey:@"username"]
+                                                       targets:[[NSArray alloc] initWithObjects: [[MPAUser alloc] initWithName:@"Max"],[[MPAUser alloc] initWithName:@"Bill"],[[MPAUser alloc] initWithName:@"Jane"], nil]];
     
     // If the user is in a game, go to main tab scene, otherwise go to noGame scene
-    if ([[json valueForKey:@"game"] isEqualToString:@"true"]) {
+    if ([@"true" isEqualToString:@"true"]) {
         MPAPageViewController *pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pageVC"];
-        //homeVC.currentUser = currentUser;
+        pageVC.currentUser = currentUser;
+        pageVC.loginVC = self;
         [self presentViewController:pageVC animated:YES completion:nil];
     }
     else{

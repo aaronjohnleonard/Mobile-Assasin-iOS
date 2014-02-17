@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.usernameLabel.text = self.currentUser.email;
+    self.usernameLabel.text = self.currentUser.username;
 }
 
 - (void)didReceiveMemoryWarning

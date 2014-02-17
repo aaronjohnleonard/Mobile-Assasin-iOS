@@ -20,16 +20,14 @@
 
 - (id)initWithFirstName:(NSString *)firstName
                lastName:(NSString *)lastName
-                  email:(NSString *)email
-               password:(NSString *)password
-                 target:(MPAUser *)target {
+               username:(NSString *)username
+                 targets:(NSArray *)targets {
     self = [super init];
     if (self) {
         _firstName = firstName;
         _lastName = lastName;
-        _email = email;
-        _password = password;
-        _target = target;
+        _username = username;
+        _targets = targets;
     }
     return self;
 }
