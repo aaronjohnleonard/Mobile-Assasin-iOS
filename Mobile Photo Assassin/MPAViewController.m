@@ -115,8 +115,6 @@
                                     returningResponse:&response
                                                 error:&error];
     
-    // NSLog(@"%@", [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding]);
-    
     NSDictionary *info = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:nil];
     
     
