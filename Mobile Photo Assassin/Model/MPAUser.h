@@ -14,11 +14,14 @@
 @property (strong, nonatomic) NSString *lastName;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSArray *targets;
+@property (strong, nonatomic) UIImage *photo;
 
--(id) initWithName:(NSString *)name;
+-(id) initWithName:(NSString *)name
+             photo:(UIImage*)photo;
 -(id) initWithFirstName:(NSString *)firstName
                lastName:(NSString *)lastName
                username:(NSString *)username
-                 targets:(NSArray *)targets;
+                targets:(NSArray *)targets
+                  photo:(UIImage*)photo;
 
 @end

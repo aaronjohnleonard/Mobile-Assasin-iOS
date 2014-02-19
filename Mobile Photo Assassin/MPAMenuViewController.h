@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPAUser.h"
 
 @interface MPAMenuViewController : UIViewController
+
+@property (weak, nonatomic) MPAUser *user;
 
 @end

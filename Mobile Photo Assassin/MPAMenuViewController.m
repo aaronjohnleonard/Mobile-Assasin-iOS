@@ -10,6 +10,8 @@
 
 @interface MPAMenuViewController ()
 
+@property (retain, nonatomic) IBOutlet UIImageView *userPhoto;
+
 @end
 
 @implementation MPAMenuViewController
@@ -26,7 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    [self.userPhoto setImage:self.user.photo];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +38,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)sendPhoto:(id)sender {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Join" ofType:@"png"];
+    UIImage *theImage = [UIImage imageWithContentsOfFile:path];
+    NSData *imageData = UIImageJPEGRepresentation(theImage, 1.0);
+    
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[imageData length]];
+    
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    [request setURL:[NSURL URLWithString:@"http://54.200.120.14:8080/game/1/target/"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"image/jpeg" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:imageData];
+}
+
+- (void)dealloc {
+    [_userPhoto release];
+    [super dealloc];
+}
 @end
+
+
+
+
+
+
