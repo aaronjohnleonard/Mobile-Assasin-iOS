@@ -12,7 +12,7 @@
 
 @interface MPAHomeViewController : UIViewController
 @property (strong, nonatomic) NSString *username;
-@property (weak, nonatomic) MPAUser *user;
+@property (strong, nonatomic) MPAUser *user;
 @property (strong, nonatomic) MPAPageViewController *pageVC;
 @property (nonatomic) NSInteger targetIndex;
 @end

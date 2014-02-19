@@ -62,18 +62,7 @@
     self.usernameLabel.text = self.username;
     self.target.text = ((MPAUser*)self.user.targets[self.targetIndex]).firstName;
     
-    //NSURL *imageurl = [NSURL URLWithString:@"http://leonard.tk/app/mobileAssassin/image"];
-    
-    //NSData *imagedata = [[NSData alloc] initWithContentsOfURL:imageurl];
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Join" ofType:@"png"];
-    UIImage *theImage = [UIImage imageWithContentsOfFile:path];
-    
-    //UIImage *image = [UIImage imageWithData: imagedata];
-        
-    //[self saveImageToServer];
-    
-    [self.targetImage setImage:theImage];
+    [self.targetImage setImage:((MPAUser*)self.user.targets[self.targetIndex]).photo];
     
     
     

@@ -98,7 +98,7 @@
     NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     
-    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:@"http://54.200.120.14:8080/member/authenticate"]];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -113,7 +113,7 @@
                                     returningResponse:&response
                                                 error:&error];
     
-    NSMutableURLRequest *inforequest = [[[NSMutableURLRequest alloc] init] autorelease];
+    NSMutableURLRequest *inforequest = [[NSMutableURLRequest alloc] init];
     [inforequest setURL:[NSURL URLWithString:@"http://54.200.120.14:8080/startAppInfo"]];
     [inforequest setHTTPMethod:@"GET"];
     
@@ -121,7 +121,7 @@
                                     returningResponse:&response
                                                 error:&error];
     
-    NSLog(@"%@", [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding]);
+    // NSLog(@"%@", [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding]);
     
     NSDictionary *info = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:nil];
     
@@ -158,7 +158,7 @@
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:imageurl];
     UIImage *userPhoto = [UIImage imageWithData:imageData];
     
-    
+    info = [info valueForKey:@"member"];
     
     // Create new user using json from server
     MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[info valueForKey:@"firstName"]

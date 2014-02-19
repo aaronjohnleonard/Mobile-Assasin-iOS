@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MPAUser.h"
+#import "MPAPageViewController.h"
 
 @interface MPAMenuViewController : UIViewController
 
-@property (weak, nonatomic) MPAUser *user;
+@property (strong, nonatomic) MPAUser *user;
+@property (strong, nonatomic) MPAPageViewController *parent;
 
 @end

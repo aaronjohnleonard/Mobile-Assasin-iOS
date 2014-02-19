@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MPAPageViewController.h"
 
 @interface MPAPageDataSource : NSObject <UIPageViewControllerDataSource>
+
+@property (strong, nonatomic) MPAPageViewController *pageVC;
 
 @end

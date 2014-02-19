@@ -19,7 +19,6 @@
     picker.delegate = self;
     [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
     [self presentViewController:picker animated:YES completion:NULL];
-    [picker release];
 }
 
 - (IBAction)ChooseExisting {
@@ -27,7 +26,6 @@
     picker2.delegate = self;
     [picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     [self presentViewController:picker2 animated:YES completion:NULL];
-    [picker2 release];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

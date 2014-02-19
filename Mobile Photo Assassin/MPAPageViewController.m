@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) NSMutableArray *targetVCs;
 @property (strong, nonatomic) MPAMenuViewController *menuVC;
+@property (strong, nonatomic) MPAPageDataSource *data;
 
 @end
 
@@ -32,7 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    MPAPageDataSource *data = [[MPAPageDataSource alloc] init];
+    self.data = [[MPAPageDataSource alloc] init];
+    self.data.pageVC = self;
     self.targetVCs = [[NSMutableArray alloc] init];
     for (int i = 0; i < [self.currentUser.targets count]; i++) {
         MPAHomeViewController *homeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
@@ -44,8 +46,9 @@
     }
     self.menuVC = [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];
     self.menuVC.user = self.currentUser;
+    self.menuVC.parent = self;
+    self.dataSource = self.data;
     [self setViewControllers:[[NSArray alloc] initWithObjects:self.menuVC, nil] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    self.dataSource = data;
 }
 
 - (void)didReceiveMemoryWarning

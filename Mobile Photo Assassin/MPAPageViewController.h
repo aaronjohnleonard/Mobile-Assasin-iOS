@@ -12,7 +12,7 @@
 
 @interface MPAPageViewController : UIPageViewController
 
-@property (weak, nonatomic) MPAUser *currentUser;
+@property (strong, nonatomic) MPAUser *currentUser;
 @property (strong, nonatomic) MPAViewController *loginVC;
 
 - (UIViewController*) before:(UIViewController*)controller;
