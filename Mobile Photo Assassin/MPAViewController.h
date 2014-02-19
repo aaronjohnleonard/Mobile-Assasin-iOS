@@ -11,7 +11,7 @@
 
 @interface MPAViewController : UIViewController <UITextViewDelegate>
 
-@property (strong, nonatomic) MPAUser *currentUser;
+@property (weak, nonatomic) MPAUser *currentUser;
 
 - (IBAction)unwindToWelcome:(UIStoryboardSegue *)segue;
 

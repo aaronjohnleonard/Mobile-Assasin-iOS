@@ -14,7 +14,7 @@
 @interface MPAPageViewController ()
 
 @property (strong, nonatomic) NSMutableArray *targetVCs;
-@property (strong, nonatomic) UIViewController *menuVC;
+@property (strong, nonatomic) MPAMenuViewController *menuVC;
 
 @end
 
@@ -43,6 +43,7 @@
         [self.targetVCs addObject:homeVC];
     }
     self.menuVC = [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];
+    self.menuVC.user = self.currentUser;
     [self setViewControllers:[[NSArray alloc] initWithObjects:self.menuVC, nil] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     self.dataSource = data;
 }
@@ -72,6 +73,9 @@
 
 - (UIViewController*) after:(UIViewController*)controller{
     if(controller == self.menuVC){
+        if ([self.targetVCs count] == 0) {
+            return nil;
+        }
         return self.targetVCs[0];
     }
     else{

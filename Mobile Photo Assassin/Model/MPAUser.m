@@ -10,10 +10,12 @@
 
 @implementation MPAUser
 
-- (id)initWithName:(NSString *)name {
+- (id)initWithName:(NSString *)name
+             photo:(UIImage*)photo{
     self = [super init];
     if (self) {
         _firstName = name;
+        _photo = photo;
     }
     return self;
 }
@@ -21,13 +23,15 @@
 - (id)initWithFirstName:(NSString *)firstName
                lastName:(NSString *)lastName
                username:(NSString *)username
-                 targets:(NSArray *)targets {
+                targets:(NSArray *)targets
+                  photo:(UIImage*)photo{
     self = [super init];
     if (self) {
         _firstName = firstName;
         _lastName = lastName;
         _username = username;
         _targets = targets;
+        _photo = photo;
     }
     return self;
 }

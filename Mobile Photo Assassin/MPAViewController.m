@@ -48,8 +48,6 @@
                                               otherButtonTitles:nil];
         [alert show];
         
-        self.currentUser.targets = [[NSArray alloc] initWithObjects: [[MPAUser alloc] initWithName:@"Max"], nil];
-        self.currentUser.username = self.email.text;
         
     }
     else if([segue.identifier isEqualToString:@"noGame"]){
@@ -115,6 +113,16 @@
                                     returningResponse:&response
                                                 error:&error];
     
+    NSMutableURLRequest *inforequest = [[[NSMutableURLRequest alloc] init] autorelease];
+    [inforequest setURL:[NSURL URLWithString:@"http://54.200.120.14:8080/startAppInfo"]];
+    [inforequest setHTTPMethod:@"GET"];
+    
+    urlData = [NSURLConnection sendSynchronousRequest:inforequest
+                                    returningResponse:&response
+                                                error:&error];
+    
+    NSLog(@"%@", [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding]);
+    
     NSDictionary *info = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:nil];
     
     
@@ -129,23 +137,41 @@
         return;
     }
     
+    NSArray *targetsData = [info valueForKey:@"targets"];
+    
+    NSMutableArray *targetObjects = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [targetsData count]; i++) {
+        NSDictionary *targetData = targetsData[i];
+        NSString *targetName = [[targetData valueForKey:@"target"] valueForKey:@"firstName"];
+        id targetID = [[targetData valueForKey:@"target"] valueForKey:@"memberId"];
+        
+        NSURL *imageurl = [NSURL URLWithString:[NSString stringWithFormat:@"http://54.200.120.14:8080/member/photo/%@",targetID]];
+        NSData *imageData = [[NSData alloc] initWithContentsOfURL:imageurl];
+        UIImage *targetPhoto = [UIImage imageWithData:imageData];
+        MPAUser *target = [[MPAUser alloc] initWithName:targetName photo:targetPhoto];
+        [targetObjects addObject:target];
+    }
+    
+    id userID = [[info valueForKey:@"member"] valueForKey:@"memberId"];
+    NSURL *imageurl = [NSURL URLWithString:[NSString stringWithFormat:@"http://54.200.120.14:8080/member/photo/%@",userID]];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:imageurl];
+    UIImage *userPhoto = [UIImage imageWithData:imageData];
+    
+    
+    
     // Create new user using json from server
     MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[info valueForKey:@"firstName"]
                                                      lastName:[info valueForKey:@"lastName"]
                                                      username:[info valueForKey:@"username"]
-                                                       targets:[[NSArray alloc] initWithObjects: [[MPAUser alloc] initWithName:@"Max"],[[MPAUser alloc] initWithName:@"Bill"],[[MPAUser alloc] initWithName:@"Jane"], nil]];
+                                                      targets:targetObjects
+                                                        photo:userPhoto];
     
-    // If the user is in a game, go to main tab scene, otherwise go to noGame scene
-    if ([@"true" isEqualToString:@"true"]) {
-        MPAPageViewController *pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pageVC"];
-        pageVC.currentUser = currentUser;
-        pageVC.loginVC = self;
-        [self presentViewController:pageVC animated:YES completion:nil];
-    }
-    else{
-        [self performSegueWithIdentifier:@"noGame"
-                                  sender:self];
-    }
+    MPAPageViewController *pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pageVC"];
+    pageVC.currentUser = currentUser;
+    pageVC.loginVC = self;
+    [self presentViewController:pageVC animated:YES completion:nil];
+
     
 }
 
