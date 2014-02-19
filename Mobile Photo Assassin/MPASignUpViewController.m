@@ -10,11 +10,13 @@
 #import "MPAViewController.h"
 
 @interface MPASignUpViewController ()
-@property (strong, nonatomic) IBOutlet UITextField *name;
-@property (strong, nonatomic) IBOutlet UITextField *email;
-@property (strong, nonatomic) IBOutlet UITextField *password;
-@property (strong, nonatomic) IBOutlet UITextField *verify;
-
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *verify;
+@property (weak, nonatomic) IBOutlet UITextField *firstName;
+@property (weak, nonatomic) IBOutlet UITextField *lastName;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewer;
 @end
 
 @implementation MPASignUpViewController
@@ -44,13 +46,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)selectPhoto:(id)sender {
+    
+}
 
 - (IBAction)SignUpTapped:(UIButton *)sender {
     if(![self.password.text isEqualToString:self.verify.text]){
 
     }
-    self.upcomingUser.firstName = self.name.text;
-    self.upcomingUser.lastName = self.name.text;
+    self.upcomingUser.firstName = self.firstName.text;
+    self.upcomingUser.lastName = self.lastName.text;
     self.upcomingUser.username = self.email.text;
 }
 
