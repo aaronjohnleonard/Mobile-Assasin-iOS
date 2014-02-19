@@ -113,7 +113,7 @@
                                     returningResponse:&response
                                                 error:&error];
     
-    NSMutableURLRequest *inforequest = [[[NSMutableURLRequest alloc] init] autorelease];
+    NSMutableURLRequest *inforequest = [[NSMutableURLRequest alloc] init];
     [inforequest setURL:[NSURL URLWithString:@"http://54.200.120.14:8080/startAppInfo"]];
     [inforequest setHTTPMethod:@"GET"];
     
@@ -174,14 +174,6 @@
 
     
 }
-
-- (IBAction)SignUpTapped:(UIButton *)sender {
-    MPASignUpViewController *signUpVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpVC"];
-    signUpVC.delegate = self;
-    signUpVC.upcomingUser = self.currentUser;
-    [self presentViewController:signUpVC animated:YES completion:nil];
-}
-
 
 @end
 

@@ -45,7 +45,7 @@
     
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[imageData length]];
     
-    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:@"http://54.200.120.14:8080/game/1/target/"]];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"image/jpeg" forHTTPHeaderField:@"Content-Type"];
@@ -54,8 +54,6 @@
 }
 
 - (void)dealloc {
-    [_userPhoto release];
-    [super dealloc];
 }
 @end
 

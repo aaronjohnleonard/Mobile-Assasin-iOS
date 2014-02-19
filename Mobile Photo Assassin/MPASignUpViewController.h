@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MPAViewController.h"
-
-@protocol MPASignUpViewControllerDelegate;
+#import "MPAUser.h"
 
 @interface MPASignUpViewController : UIViewController
 
-@property (strong, nonatomic) MPAViewController *delegate;
-@property (strong, nonatomic) MPAUser *upcomingUser;
+@property (strong, nonatomic) MPAUser *user;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
