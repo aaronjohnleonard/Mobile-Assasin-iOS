@@ -1,0 +1,86 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
+GET		/startAppInfo					controllers.Application.startAppInfo()
+# Home page
+GET     /                               controllers.Application.index()
+GET     /preUsers                       controllers.Application.getPreUsers()
+GET     /preUsers/:id                   controllers.Application.getPreUserById(id : Long)
+POST    /addPreUser                     controllers.Application.addPreUser()
+
+
+# MEMBER CONTROLLER
+GET     /member/login                   controllers.MemberController.login()
+POST    /member/authenticate            controllers.MemberController.authenticate()
+GET     /member/logout                  controllers.MemberController.logout()
+POST    /member/createAccount           controllers.MemberController.createAccount()
+GET     /member/info                    controllers.MemberController.getMemberInfo()
+GET     /member/photo                    controllers.MemberController.getPhoto()
+GET     /member/photo/:memberId         controllers.MemberController.getPhotoById(memberId : Long)
+
+# GAME CONTROLLER
+GET     /game/gameSetup                 controllers.GameController.gameSetup()
+POST    /game/createGame                controllers.GameController.createGame()
+GET     /game/getGames                  controllers.GameController.getGames()
+GET     /game/getGame/:gameId                  controllers.GameController.getGame(gameId: Long)
+
+POST    /game/join/:gameId              controllers.GameController.join(gameId: Long)
+POST    /game/leave/:gameId             controllers.GameController.leave(gameId: Long)
+POST    /game/startGame/:gameId         controllers.GameController.startGame(gameId: Long)
+
+GET     /game/allMembers/:id            controllers.GameController.getAllMembers(id: Long)
+GET     /game/memberGames               controllers.GameController.getMemberGames()
+GET     /game/activePlayers/:id         controllers.GameController.getActivePlayers(id: Long)
+GET     /game/canJoinGame/:gameId         controllers.GameController.canJoinGame(gameId: Long)
+GET     /game/getGameSize/:gameId         controllers.GameController.getGameSize(gameId: Long)
+
+# TARGET CONTROLLER
+GET     /target/:gameId                 controllers.TargetController.getTarget(gameId: Long)
+GET     /target/all                     controllers.TargetController.getListOfTargets()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                   controllers.Assets.at(path="/public", file)
+
+#   Routes to add
+
+#   /createAccount
+
+#   /login
+
+#   /logout
+
+#   /createGame
+#        -should create a new Game object and set logged in member to creator
+#        - a new player object should be added and
+#       - Ids of game and player used to create PlayerToGame object
+
+#   /joinGame/{gameId}
+#      - check if game is full
+#      - If not, creates new Player object
+#      - Insert player object, insert new PlayerToGame object
+#
+
+#   /leaveGame/{gameId}/{playerId}
+#   - delete object from PlayerToGame
+#   - delete Player object
+#
+
+#   /getNumberOfPlayersInGame
+
+#   /getNumberOfAlivePlayersInGame
+
+#   /sendPhoto/{assassinId}/{targetId}
+#       - Save photo to db, request verification from creator or victim
+
+#   /photoDecline/{photoId}   (user says this photo is not me)
+#       IMPLEMENTED Later
+#
+#
+#   /photoAccept/{photoId}    (user agrees he/she has been assassinated)
+#       - mark player as assassinated
+#       - set target of assassin to the target of player assassinated
+#       - IF new target is yourself, the game is over and you have won, set game.completion = true
+#
+#

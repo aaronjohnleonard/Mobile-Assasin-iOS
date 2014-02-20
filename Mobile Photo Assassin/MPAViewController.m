@@ -175,14 +175,6 @@
     
 }
 
-- (IBAction)SignUpTapped:(UIButton *)sender {
-    MPASignUpViewController *signUpVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SignUpVC"];
-    signUpVC.delegate = self;
-    signUpVC.upcomingUser = self.currentUser;
-    [self presentViewController:signUpVC animated:YES completion:nil];
-}
-
-
 @end
 
 

@@ -10,6 +10,11 @@
 
 @interface MPAShootViewController ()
 
+@property (strong, nonatomic) UIImagePickerController *picker;
+@property (strong, nonatomic) UIImagePickerController *picker2;
+@property (strong, nonatomic) UIImage *image;;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @end
 
 @implementation MPAShootViewController
@@ -29,9 +34,9 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [imageView setImage:image];
-    NSData *pngData = UIImagePNGRepresentation(image);
+    self.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self.imageView setImage:self.image];
+    NSData *pngData = UIImagePNGRepresentation(self.image);
     NSString *filePath = [self documentsPathForFileName:@"image.png"];
     [pngData writeToFile:filePath atomically:YES]; //Write the file
     [self dismissViewControllerAnimated:YES completion:NULL];
@@ -39,6 +44,21 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (IBAction)chooseExisting {
+    self.picker2 = [[UIImagePickerController alloc] init];
+    self.picker2.delegate = self;
+    [self.picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:self.picker2 animated:YES completion:NULL];
+}
+
+- (IBAction)loadImageButton:(UIButton *)sender {
+    NSString *filePath = [self documentsPathForFileName:@"image.png"];
+    NSData *pngData = [NSData dataWithContentsOfFile:filePath];
+    UIImage *localImage = [UIImage imageWithData:pngData];
+    
+    self.imageView.image = localImage;
 }
 
 - (NSString *)documentsPathForFileName:(NSString *)name
@@ -49,33 +69,13 @@
     return [documentsPath stringByAppendingPathComponent:name];
 }
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-- (IBAction)loadImageButton:(UIButton *)sender {
-    NSString *filePath = [self documentsPathForFileName:@"image.png"];
-    NSData *pngData = [NSData dataWithContentsOfFile:filePath];
-    UIImage *localImage = [UIImage imageWithData:pngData];
-    
-    imageView.image = localImage;
+- (IBAction)finished {
+    [self.signUpVC.imageView setImage:self.image];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)back{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

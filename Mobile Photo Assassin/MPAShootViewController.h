@@ -7,17 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPASignUpViewController.h"
 
 @interface MPAShootViewController : UIViewController < UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-{
-    UIImagePickerController *picker;
-    UIImagePickerController *picker2;
-    UIImage *image;
-    IBOutlet UIImageView *imageView;
-}
 
-- (IBAction)TakePhoto;
-- (IBAction)ChooseExisting;
-
+@property (strong, nonatomic) MPASignUpViewController *signUpVC;
 
 @end
