@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EEE40EF18B9307A0020AD0B /* MPAGameCreatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEE40EE18B9307A0020AD0B /* MPAGameCreatorController.m */; };
 		3C64685B18A6E06F00C545E7 /* MPAPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64685A18A6E06F00C545E7 /* MPAPageViewController.m */; };
 		3C64685E18A6E2CF00C545E7 /* MPAMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64685D18A6E2CF00C545E7 /* MPAMenuViewController.m */; };
 		3C7195121888A04700AB4A01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7195111888A04700AB4A01 /* Foundation.framework */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EEE40ED18B9307A0020AD0B /* MPAGameCreatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAGameCreatorController.h; sourceTree = "<group>"; };
+		2EEE40EE18B9307A0020AD0B /* MPAGameCreatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAGameCreatorController.m; sourceTree = "<group>"; };
 		3C64685918A6E06F00C545E7 /* MPAPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAPageViewController.h; sourceTree = "<group>"; };
 		3C64685A18A6E06F00C545E7 /* MPAPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAPageViewController.m; sourceTree = "<group>"; };
 		3C64685C18A6E2CF00C545E7 /* MPAMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAMenuViewController.h; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				3C94D433189B63F7009E0E46 /* MPATestViewController.h */,
 				3C94D434189B63F7009E0E46 /* MPATestViewController.m */,
 				3C71959D188DD4D600AB4A01 /* MPALocationPicker.h */,
+				2EEE40ED18B9307A0020AD0B /* MPAGameCreatorController.h */,
+				2EEE40EE18B9307A0020AD0B /* MPAGameCreatorController.m */,
 				3C71959E188DD4D600AB4A01 /* MPALocationPicker.m */,
 				3C719592188A5AC400AB4A01 /* MPAUser.h */,
 				3C719593188A5AC400AB4A01 /* MPAUser.m */,
@@ -323,6 +328,7 @@
 				3C719591188A1DA000AB4A01 /* MPASignUpViewController.m in Sources */,
 				3C71951E1888A04700AB4A01 /* main.m in Sources */,
 				3C94D430189AA6BE009E0E46 /* MPANoGameViewController.m in Sources */,
+				2EEE40EF18B9307A0020AD0B /* MPAGameCreatorController.m in Sources */,
 				3C64685B18A6E06F00C545E7 /* MPAPageViewController.m in Sources */,
 				3C7195221888A04700AB4A01 /* MPAAppDelegate.m in Sources */,
 				3C64685E18A6E2CF00C545E7 /* MPAMenuViewController.m in Sources */,
