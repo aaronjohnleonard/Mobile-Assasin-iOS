@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MPAUser.h"
 
-@interface MPASignUpViewController : UIViewController
+@interface MPASignUpViewController : UIViewController <UITextViewDelegate>
 
 @property (strong, nonatomic) MPAUser *user;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

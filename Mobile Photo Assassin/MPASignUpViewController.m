@@ -26,6 +26,17 @@
     self.imageView.contentMode =UIViewContentModeScaleAspectFit;
     UIImage *image = [UIImage imageNamed: @"placeholder.png"];
     [self.imageView setImage:image];
+    self.userName.delegate = (id)self;
+    self.password.delegate = (id)self;
+    self.verify.delegate = (id)self;
+    self.firstName.delegate = (id)self;
+    self.lastName.delegate = (id)self;
+    self.email.delegate = (id)self;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

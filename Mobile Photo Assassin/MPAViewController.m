@@ -161,9 +161,11 @@
     
     
     // Create new user using json from server
-    MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[info valueForKey:@"firstName"]
-                                                     lastName:[info valueForKey:@"lastName"]
-                                                     username:[info valueForKey:@"username"]
+    MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[[info valueForKey:@"member"] valueForKey:@"firstName"]
+                                                     lastName:[[info valueForKey:@"member"]valueForKey:@"lastName"]
+                                                     username:[[info valueForKey:@"member"] valueForKey:@"username"]
+                            
+                                         email:[[info valueForKey:@"member"] valueForKey:@"email"]
                                                       targets:targetObjects
                                                         photo:userPhoto];
     
