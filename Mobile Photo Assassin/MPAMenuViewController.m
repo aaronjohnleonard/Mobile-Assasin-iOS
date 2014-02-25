@@ -11,6 +11,9 @@
 @interface MPAMenuViewController ()
 
 @property (retain, nonatomic) IBOutlet UIImageView *userPhoto;
+@property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *email;
 
 @end
 
@@ -29,7 +32,22 @@
 {
     [super viewDidLoad];
     
-    [self.userPhoto setImage:self.user.photo];
+    self.username.text = self.user.username;
+    self.name.text = [NSString stringWithFormat:@"%@ %@", self.user.firstName, self.user.lastName];
+    self.email.text = self.user.email;
+    
+    self.userPhoto.contentMode = UIViewContentModeScaleAspectFit;
+    
+    //assume that the image is loaded in landscape mode from server
+    if (self.user.photo.size.height < self.user.photo.size.width)
+    {
+        UIImage * PortraitImage = [[UIImage alloc] initWithCGImage: self.user.photo.CGImage scale: 1.0 orientation: UIImageOrientationRight];
+        [self.userPhoto setImage:PortraitImage];
+    }
+    else {
+        [self.userPhoto setImage:self.user.photo];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning

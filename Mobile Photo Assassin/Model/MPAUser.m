@@ -23,6 +23,7 @@
 - (id)initWithFirstName:(NSString *)firstName
                lastName:(NSString *)lastName
                username:(NSString *)username
+                  email:(NSString *)email
                 targets:(NSArray *)targets
                   photo:(UIImage*)photo{
     self = [super init];
@@ -30,6 +31,7 @@
         _firstName = firstName;
         _lastName = lastName;
         _username = username;
+        _email = email;
         _targets = targets;
         _photo = photo;
     }
