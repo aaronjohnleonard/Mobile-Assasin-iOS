@@ -66,7 +66,6 @@
     // Create the request.
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-    [request setHTTPShouldHandleCookies:NO]; //TODO: handle auth - cookie?
     [request setTimeoutInterval:30];
     [request setHTTPMethod:@"POST"];
     
