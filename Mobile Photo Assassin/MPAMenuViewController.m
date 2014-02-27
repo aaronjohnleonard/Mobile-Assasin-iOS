@@ -56,10 +56,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)CreateTapped:(id)sender {
-    int x = 5;
-}
-
 - (IBAction)sendPhoto:(id)sender {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Join" ofType:@"png"];
     UIImage *theImage = [UIImage imageWithContentsOfFile:path];

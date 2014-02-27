@@ -20,17 +20,17 @@
 @implementation MPAShootViewController
 
 - (IBAction)TakePhoto {
-    picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
-    [self presentViewController:picker animated:YES completion:NULL];
+    self.picker = [[UIImagePickerController alloc] init];
+    self.picker.delegate = self;
+    [self.picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [self presentViewController:self.picker animated:YES completion:NULL];
 }
 
 - (IBAction)ChooseExisting {
-    picker2 = [[UIImagePickerController alloc] init];
-    picker2.delegate = self;
-    [picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    [self presentViewController:picker2 animated:YES completion:NULL];
+    self.picker2 = [[UIImagePickerController alloc] init];
+    self.picker2.delegate = self;
+    [self.picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:self.picker2 animated:YES completion:NULL];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
