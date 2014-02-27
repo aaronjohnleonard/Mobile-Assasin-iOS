@@ -10,6 +10,7 @@
 
 @interface MPAGameCreatorController ()
 @property (weak, nonatomic) IBOutlet UITextField *gameName;
+@property (weak, nonatomic) IBOutlet UITextField *maxPlayers;
 
 @end
 
@@ -47,10 +48,21 @@
         return;
     }
     
+    // Make sure that a valid number of maximum players has been entered.
+    if ([self.maxPlayers.text intValue] <= 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Player Count"
+                                                        message:@"Please input the maximum number of players."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
     // Set the POST parameters.
     // TODO: don't have max_size and gameType hardcoded
     NSMutableDictionary* _params = [[NSMutableDictionary alloc] init];
-    [_params setObject:@"16" forKey:@"max_size"];
+    [_params setObject:self.maxPlayers.text forKey:@"max_size"];
     [_params setObject:self.gameName.text forKey:@"gameName"];
     [_params setObject:@"1" forKey:@"gameType"];
     
