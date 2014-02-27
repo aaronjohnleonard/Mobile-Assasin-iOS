@@ -40,7 +40,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcO-8D-ioJ">
-                                <rect key="frame" x="126" y="433" width="69" height="46"/>
+                                <rect key="frame" x="126" y="431" width="69" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Login">
@@ -127,7 +127,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9M-4l-h6a">
-                                <rect key="frame" x="73" y="508" width="175" height="67"/>
+                                <rect key="frame" x="73" y="509" width="175" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Sign Me Up!">
@@ -145,7 +145,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKe-Ze-9Cz">
-                                <rect key="frame" x="76" y="301" width="158" height="51"/>
+                                <rect key="frame" x="81" y="346" width="158" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Choose Photo">
@@ -156,7 +156,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ubd-sy-imh">
-                                <rect key="frame" x="40" y="345" width="240" height="176"/>
+                                <rect key="frame" x="71" y="392" width="179" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWI-Ft-n5U">
@@ -169,6 +169,11 @@
                                     <action selector="back" destination="SNX-P1-nfz" eventType="touchUpInside" id="1Ta-Qi-Cxi"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZz-h7-kl0" customClass="FBLoginView">
+                                <rect key="frame" x="80" y="312" width="160" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -178,6 +183,7 @@
                         <outlet property="firstName" destination="DRn-ci-Dyh" id="A16-jT-Aq3"/>
                         <outlet property="imageView" destination="Ubd-sy-imh" id="lVS-nD-RjN"/>
                         <outlet property="lastName" destination="g4A-px-0qU" id="nsp-OC-Ifl"/>
+                        <outlet property="login" destination="AZz-h7-kl0" id="uSl-8v-5Tw"/>
                         <outlet property="password" destination="i0h-gx-jwH" id="CkG-If-4OL"/>
                         <outlet property="userName" destination="p8a-1N-EXu" id="2Yz-A9-og4"/>
                         <outlet property="verify" destination="Gb3-PC-bof" id="HZM-rK-Aut"/>

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *email;
+@property (strong, nonatomic) IBOutlet FBLoginView *login;
 @end
 
 @implementation MPASignUpViewController
@@ -32,6 +33,8 @@
     self.firstName.delegate = (id)self;
     self.lastName.delegate = (id)self;
     self.email.delegate = (id)self;
+    self.login = [[FBLoginView alloc] initWithReadPermissions:@[@"basic_info"]];
+    self.login.delegate = self;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -182,6 +185,17 @@
 
 - (IBAction)back {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
+    self.userName.text = [user username];
+    self.firstName.text = [user first_name];
+    self.lastName.text = [user last_name];
+    
+    NSURL *imageurl = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large", [user username]]];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:imageurl];
+    self.imageView.image = [UIImage imageWithData:imageData];
+    
 }
 
 @end

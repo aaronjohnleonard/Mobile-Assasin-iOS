@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 #import "MPAUser.h"
 
-@interface MPASignUpViewController : UIViewController <UITextViewDelegate>
+@interface MPASignUpViewController : UIViewController <UITextViewDelegate, FBLoginViewDelegate>
 
 @property (strong, nonatomic) MPAUser *user;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

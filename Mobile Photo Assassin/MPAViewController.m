@@ -15,7 +15,6 @@
 @interface MPAViewController()
 @property (strong, nonatomic) IBOutlet UITextField *email;
 @property (strong, nonatomic) IBOutlet UITextField *password;
-// @property (strong, nonatomic) IBOutlet FBLoginView *login;
 
 @end
 
@@ -70,8 +69,6 @@
     self.currentUser = [[MPAUser alloc]init];
     self.email.delegate = (id)self;
     self.password.delegate = (id)self;
-    //self.login = [[FBLoginView alloc] initWithReadPermissions:@[@"basic_info"]];
-    //self.login.delegate = self;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

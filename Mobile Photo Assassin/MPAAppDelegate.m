@@ -7,7 +7,7 @@
 //
 
 #import "MPAAppDelegate.h"
-// #import <FacebookSDK/FacebookSDK.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @implementation MPAAppDelegate
 
@@ -45,7 +45,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-/*
+
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
@@ -58,6 +58,5 @@
     
     return wasHandled;
 }
- */
 
 @end
