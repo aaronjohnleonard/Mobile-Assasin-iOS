@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSArray *targets;
 @property (strong, nonatomic) UIImage *photo;
+@property (nonatomic) NSInteger userId;
 
 -(id) initWithName:(NSString *)name
              photo:(UIImage*)photo;
@@ -24,6 +25,7 @@
                username:(NSString *)username
                   email:(NSString *)email
                 targets:(NSArray *)targets
-                  photo:(UIImage*)photo;
+                  photo:(UIImage*)photo
+                 userId:(NSInteger)userId;
 
 @end

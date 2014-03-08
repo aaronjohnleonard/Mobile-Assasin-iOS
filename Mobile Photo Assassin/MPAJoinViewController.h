@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPAUser.h"
 
 @interface MPAJoinViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic) MPAUser *currentUser;
 
 @end

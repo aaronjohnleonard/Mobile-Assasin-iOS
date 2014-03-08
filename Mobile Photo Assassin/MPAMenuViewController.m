@@ -7,6 +7,7 @@
 //
 
 #import "MPAMenuViewController.h"
+#import "MPAJoinViewController.h"
 
 @interface MPAMenuViewController ()
 
@@ -54,6 +55,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)logoutTapped:(id)sender {
+    [self.parent logoutTapped];
+}
+- (IBAction)joinButtonTapped:(id)sender {
+    MPAJoinViewController *joinVC = [self.storyboard instantiateViewControllerWithIdentifier:@"joinVC"];
+    joinVC.currentUser = self.user;
+    [self presentViewController:joinVC animated:YES completion:nil];
 }
 
 - (IBAction)sendPhoto:(id)sender {
