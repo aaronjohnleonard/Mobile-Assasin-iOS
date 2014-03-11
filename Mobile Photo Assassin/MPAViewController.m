@@ -60,6 +60,7 @@
 - (IBAction)unwindToWelcome:(UIStoryboardSegue *)segue
 {
     self.email.text = self.currentUser.username;
+    self.password.text = @"";
     [self.email becomeFirstResponder];
 }
 
@@ -145,11 +146,12 @@
         NSDictionary *targetData = targetsData[i];
         NSString *targetName = [[targetData valueForKey:@"target"] valueForKey:@"firstName"];
         id targetID = [[targetData valueForKey:@"target"] valueForKey:@"memberId"];
+        NSString *gameId = [[targetData valueForKey:@"game"] valueForKey:@"gameId"];
         
         NSURL *imageurl = [NSURL URLWithString:[NSString stringWithFormat:@"http://54.200.120.14:8080/member/photo/%@",targetID]];
         NSData *imageData = [[NSData alloc] initWithContentsOfURL:imageurl];
         UIImage *targetPhoto = [UIImage imageWithData:imageData];
-        MPAUser *target = [[MPAUser alloc] initWithName:targetName photo:targetPhoto];
+        MPAUser *target = [[MPAUser alloc] initWithName:targetName photo:targetPhoto gameId:gameId];
         [targetObjects addObject:target];
     }
     
@@ -161,11 +163,11 @@
     info = [info valueForKey:@"member"];
     
     // Create new user using json from server
-    MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[[info valueForKey:@"member"] valueForKey:@"firstName"]
-                                                     lastName:[[info valueForKey:@"member"]valueForKey:@"lastName"]
-                                                     username:[[info valueForKey:@"member"] valueForKey:@"username"]
+    MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[info valueForKey:@"firstName"]
+                                                     lastName:[info valueForKey:@"lastName"]
+                                                     username:[info valueForKey:@"username"]
                             
-                                         email:[[info valueForKey:@"member"] valueForKey:@"email"]
+                                         email:[info valueForKey:@"email"]
                                                       targets:targetObjects
                                                         photo:userPhoto];
     

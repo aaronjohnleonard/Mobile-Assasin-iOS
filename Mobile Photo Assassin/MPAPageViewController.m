@@ -42,6 +42,7 @@
         homeVC.user = self.currentUser;
         homeVC.pageVC = self;
         homeVC.targetIndex = i;
+        homeVC.gameId = ((MPAUser *)self.currentUser.targets[i]).gameId;
         [self.targetVCs addObject:homeVC];
     }
     self.menuVC = [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];

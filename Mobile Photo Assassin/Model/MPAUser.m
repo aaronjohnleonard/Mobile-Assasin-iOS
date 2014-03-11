@@ -10,12 +10,14 @@
 
 @implementation MPAUser
 
-- (id)initWithName:(NSString *)name
-             photo:(UIImage*)photo{
+-(id) initWithName:(NSString *)name
+             photo:(UIImage*)photo
+            gameId:(NSString *)gameId{
     self = [super init];
     if (self) {
         _firstName = name;
         _photo = photo;
+        _gameId = gameId;
     }
     return self;
 }

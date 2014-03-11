@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MPASignUpViewController.h"
 
-@interface MPAShootViewController : UIViewController < UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface MPAShootViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) MPASignUpViewController *signUpVC;
 

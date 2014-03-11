@@ -35,10 +35,11 @@
 		3CB356C018BDACFA00A7A4A8 /* MPAJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB356BF18BDACFA00A7A4A8 /* MPAJoinViewController.m */; };
 		3CB356C318BDB14600A7A4A8 /* MPAGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB356C218BDB14600A7A4A8 /* MPAGame.m */; };
 		3CB58C6018AD4DD5005313F7 /* MPAPageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB58C5F18AD4DD5005313F7 /* MPAPageDataSource.m */; };
-		3CFF96E318BF0BAE007DB1B3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFF96E218BF0BAE007DB1B3 /* FacebookSDK.framework */; };
 		640E67F018B55F9D009538E3 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 640E67EF18B55F9D009538E3 /* placeholder.png */; };
 		640E67F218B56669009538E3 /* routes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 640E67F118B56669009538E3 /* routes.txt */; };
 		64A532F618A1815F009139F8 /* MPAShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A532F518A1815F009139F8 /* MPAShootViewController.m */; };
+		64E60B1718C3ECCF00CDE931 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E60B1618C3ECCF00CDE931 /* FacebookSDK.framework */; };
+		64E60B2018C3F46B00CDE931 /* MPAShootTargetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E60B1F18C3F46B00CDE931 /* MPAShootTargetViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,11 +98,13 @@
 		3CB356C218BDB14600A7A4A8 /* MPAGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAGame.m; sourceTree = "<group>"; };
 		3CB58C5E18AD4DD5005313F7 /* MPAPageDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAPageDataSource.h; sourceTree = "<group>"; };
 		3CB58C5F18AD4DD5005313F7 /* MPAPageDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAPageDataSource.m; sourceTree = "<group>"; };
-		3CFF96E218BF0BAE007DB1B3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		640E67EF18B55F9D009538E3 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		640E67F118B56669009538E3 /* routes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.txt; sourceTree = "<group>"; };
 		64A532F418A1815F009139F8 /* MPAShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAShootViewController.h; sourceTree = "<group>"; };
 		64A532F518A1815F009139F8 /* MPAShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAShootViewController.m; sourceTree = "<group>"; };
+		64E60B1618C3ECCF00CDE931 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		64E60B1E18C3F46B00CDE931 /* MPAShootTargetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAShootTargetViewController.h; sourceTree = "<group>"; };
+		64E60B1F18C3F46B00CDE931 /* MPAShootTargetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAShootTargetViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C7195141888A04700AB4A01 /* CoreGraphics.framework in Frameworks */,
-				3CFF96E318BF0BAE007DB1B3 /* FacebookSDK.framework in Frameworks */,
+				64E60B1718C3ECCF00CDE931 /* FacebookSDK.framework in Frameworks */,
 				3C7195161888A04700AB4A01 /* UIKit.framework in Frameworks */,
 				3C7195121888A04700AB4A01 /* Foundation.framework in Frameworks */,
 			);
@@ -151,7 +154,7 @@
 		3C7195101888A04700AB4A01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3CFF96E218BF0BAE007DB1B3 /* FacebookSDK.framework */,
+				64E60B1618C3ECCF00CDE931 /* FacebookSDK.framework */,
 				3C7195111888A04700AB4A01 /* Foundation.framework */,
 				3C7195131888A04700AB4A01 /* CoreGraphics.framework */,
 				3C7195151888A04700AB4A01 /* UIKit.framework */,
@@ -163,9 +166,11 @@
 		3C7195171888A04700AB4A01 /* Mobile Photo Assassin */ = {
 			isa = PBXGroup;
 			children = (
+				3C7195231888A04700AB4A01 /* Main.storyboard */,
+				64E60B1E18C3F46B00CDE931 /* MPAShootTargetViewController.h */,
+				64E60B1F18C3F46B00CDE931 /* MPAShootTargetViewController.m */,
 				3C7195201888A04700AB4A01 /* MPAAppDelegate.h */,
 				3C7195211888A04700AB4A01 /* MPAAppDelegate.m */,
-				3C7195231888A04700AB4A01 /* Main.storyboard */,
 				3CB356BE18BDACFA00A7A4A8 /* MPAJoinViewController.h */,
 				3CB356BF18BDACFA00A7A4A8 /* MPAJoinViewController.m */,
 				3CB356C118BDB14600A7A4A8 /* MPAGame.h */,
@@ -335,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E60B2018C3F46B00CDE931 /* MPAShootTargetViewController.m in Sources */,
 				3CB58C6018AD4DD5005313F7 /* MPAPageDataSource.m in Sources */,
 				3C71958E1889E99700AB4A01 /* MPAHomeViewController.m in Sources */,
 				3C71959F188DD4D600AB4A01 /* MPALocationPicker.m in Sources */,
@@ -481,6 +487,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/aaronleonard/Mobile\\ Photo\\ Assassin",
+					"/Users/jcalebcall/Documents/CS428/Mobile-Assasin-iOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mobile Photo Assassin/Mobile Photo Assassin-Prefix.pch";
@@ -499,6 +506,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/aaronleonard/Mobile\\ Photo\\ Assassin",
+					"/Users/jcalebcall/Documents/CS428/Mobile-Assasin-iOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mobile Photo Assassin/Mobile Photo Assassin-Prefix.pch";

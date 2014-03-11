@@ -35,10 +35,18 @@ GET     /game/memberGames               controllers.GameController.getMemberGame
 GET     /game/activePlayers/:id         controllers.GameController.getActivePlayers(id: Long)
 GET     /game/canJoinGame/:gameId         controllers.GameController.canJoinGame(gameId: Long)
 GET     /game/getGameSize/:gameId         controllers.GameController.getGameSize(gameId: Long)
+GET     /game/winner/:gameId         controllers.GameController.getGameWinner(gameId: Long)
 
 # TARGET CONTROLLER
-GET     /target/:gameId                 controllers.TargetController.getTarget(gameId: Long)
-GET     /target/all                     controllers.TargetController.getListOfTargets()
+GET     /target/active/all                     controllers.TargetController.getListOfActiveTargets()
+GET     /target/active/:gameId                 controllers.TargetController.getActiveTarget(gameId: Long)
+GET     /target/all/all                        controllers.TargetController.getAllTargets()
+GET     /target/all/:gameId                        controllers.TargetController.getAllTargetsForGame(gameId: Long)
+POST     /target/assassinate                controllers.TargetController.assassinate()
+GET     /target/photo/:targetId         controllers.TargetController.getPhotoForTarget(targetId : Long)
+GET     /target/alive/:gameId         controllers.TargetController.amIStillAlive(gameId : Long)
+GET     /assassinate            controllers.TargetController.getAssassinatePage()
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                   controllers.Assets.at(path="/public", file)

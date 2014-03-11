@@ -26,7 +26,7 @@
     [self presentViewController:self.picker animated:YES completion:NULL];
 }
 
-- (IBAction)ChooseExisting {
+- (IBAction)chooseExisting {
     self.picker2 = [[UIImagePickerController alloc] init];
     self.picker2.delegate = self;
     [self.picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
@@ -44,13 +44,6 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (IBAction)chooseExisting {
-    self.picker2 = [[UIImagePickerController alloc] init];
-    self.picker2.delegate = self;
-    [self.picker2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    [self presentViewController:self.picker2 animated:YES completion:NULL];
 }
 
 - (IBAction)loadImageButton:(UIButton *)sender {

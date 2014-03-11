@@ -17,8 +17,12 @@
 @property (strong, nonatomic) NSArray *targets;
 @property (strong, nonatomic) UIImage *photo;
 
+// used for assassinating
+@property (strong, nonatomic) NSString *gameId;
+
 -(id) initWithName:(NSString *)name
-             photo:(UIImage*)photo;
+             photo:(UIImage*)photo
+            gameId:(NSString *)gameId;
 -(id) initWithFirstName:(NSString *)firstName
                lastName:(NSString *)lastName
                username:(NSString *)username

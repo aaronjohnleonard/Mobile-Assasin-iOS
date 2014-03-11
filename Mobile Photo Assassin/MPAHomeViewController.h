@@ -13,6 +13,7 @@
 @interface MPAHomeViewController : UIViewController
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) MPAUser *user;
+@property (strong, nonatomic) NSString *gameId;
 @property (strong, nonatomic) MPAPageViewController *pageVC;
 @property (nonatomic) NSInteger targetIndex;
 @end
