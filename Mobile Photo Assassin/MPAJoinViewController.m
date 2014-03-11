@@ -51,7 +51,7 @@
     
     for (int i = 0; i < games.count; i++) {
         NSDictionary* game = games[i];
-        MPAGame* gameObj = [[MPAGame alloc] initWithId:[game valueForKey:@"gameId"]  completed:[game valueForKey:@"completion"] hasStarted:[game valueForKey:@"hasStarted"] name:[game valueForKey:@"gameName"] numPlayers:[game valueForKey:@"numberOfPlayersInGame"]];
+        MPAGame* gameObj = [[MPAGame alloc] initWithId:[[game valueForKey:@"gameId"] intValue]  completed:[game valueForKey:@"completion"] hasStarted:[game valueForKey:@"hasStarted"] name:[game valueForKey:@"gameName"] numPlayers:[[game valueForKey:@"numberOfPlayersInGame"] intValue] creatorId:[[[game valueForKey:@"creator"] valueForKey:@"memberId"] intValue]];
         [self.games addObject:gameObj];
     }
 }
@@ -62,30 +62,55 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)joinTapped:(id)sender {
-    NSInteger index = [self.joinButtons indexOfObject:sender] + 1;
-    
-    NSData *urlData;
-    NSURLResponse *response;
-    NSError *error;
-    
-    NSMutableURLRequest *joinGameRequest = [[NSMutableURLRequest alloc] init];
-    [joinGameRequest setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://54.200.120.14:8080/game/join/%ld", index]]];
-    [joinGameRequest setHTTPMethod:@"POST"];
-    
-    urlData = [NSURLConnection sendSynchronousRequest:joinGameRequest
-                                    returningResponse:&response
-                                                error:&error];
-    
-    NSLog([[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding]);
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                    message:@"Successfully Joined!"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-    
-    ((UIButton *)sender).hidden = YES;
+    if ([[(UIButton*)sender titleLabel].text isEqualToString:@"Join"]) {
+        NSInteger index = [self.joinButtons indexOfObject:sender];
+        MPAGame *gameToJoin = [self.games objectAtIndex:index];
+        NSData *urlData;
+        NSURLResponse *response;
+        NSError *error;
+        
+        NSMutableURLRequest *joinGameRequest = [[NSMutableURLRequest alloc] init];
+        [joinGameRequest setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://54.200.120.14:8080/game/join/%ld", gameToJoin.gameId]]];
+        [joinGameRequest setHTTPMethod:@"POST"];
+        
+        urlData = [NSURLConnection sendSynchronousRequest:joinGameRequest
+                                        returningResponse:&response
+                                                    error:&error];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:[[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        ((UIButton *)sender).hidden = YES;
+    }
+    else if ([[(UIButton*)sender titleLabel].text isEqualToString:@"Start"]){
+        NSInteger index = [self.joinButtons indexOfObject:sender];
+        MPAGame *gameToStart = [self.games objectAtIndex:index];
+        NSData *urlData;
+        NSURLResponse *response;
+        NSError *error;
+        
+        NSMutableURLRequest *startGameRequest = [[NSMutableURLRequest alloc] init];
+        [startGameRequest setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://54.200.120.14:8080/game/startGame/%ld", gameToStart.gameId]]];
+        [startGameRequest setHTTPMethod:@"POST"];
+        
+        urlData = [NSURLConnection sendSynchronousRequest:startGameRequest
+                                        returningResponse:&response
+                                                    error:&error];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:[[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        ((UIButton *)sender).hidden = YES;
+
+    }
     
 }
 
@@ -97,30 +122,40 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MPAGame *thisGame = [self.games objectAtIndex:[indexPath row]];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gameTableCell"];
     UILabel *gameName = (UILabel *)[cell viewWithTag:100];
-    [gameName setText:[[self.games objectAtIndex:[indexPath row]] gameName]];
+    if ([[thisGame gameName] class] == [[NSNull null] class]) {
+        [gameName setText:@"null"];
+    }else{
+        [gameName setText:[thisGame gameName]];
+    }
     
-    UIButton *joinButton = (UIButton *)[cell viewWithTag:101];
+    UIButton *actionButton = (UIButton *)[cell viewWithTag:101];
     
     NSData *urlData;
     NSURLResponse *response;
     NSError *error;
     
     NSMutableURLRequest *inforequest = [[NSMutableURLRequest alloc] init];
-    [inforequest setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://54.200.120.14:8080/game/canJoinGame/%ld",(long)[indexPath row]+1]]];
+    [inforequest setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://54.200.120.14:8080/game/canJoinGame/%ld",(long)[thisGame gameId]]]];
     urlData = [NSURLConnection sendSynchronousRequest:inforequest
                                     returningResponse:&response
                                                 error:&error];
     NSString* canJoin = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
     if ([canJoin isEqualToString:@"true"]) {
-        joinButton.hidden = NO;
+        actionButton.hidden = NO;
     }
     else{
-        joinButton.hidden = YES;
+        actionButton.hidden = YES;
+    }
+    if (thisGame.creatorId == self.currentUser.userId) {
+        [actionButton setTitle:@"Start" forState:UIControlStateNormal];
+        actionButton.hidden = NO;
     }
     
-    [self.joinButtons addObject:joinButton];
+    [self.joinButtons addObject:actionButton];
     
     return cell;
 }

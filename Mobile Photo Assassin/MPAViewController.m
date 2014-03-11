@@ -162,6 +162,9 @@
     
     info = [info valueForKey:@"member"];
     
+    NSString *firstName = [info valueForKey:@"firstName"];
+    
+    
     // Create new user using json from server
     MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[info valueForKey:@"firstName"]
                                                      lastName:[info valueForKey:@"lastName"]
@@ -169,7 +172,8 @@
                             
                                          email:[info valueForKey:@"email"]
                                                       targets:targetObjects
-                                                        photo:userPhoto];
+                                                        photo:userPhoto
+                                                       userId:[[info valueForKey:@"memberId"] intValue]];
     
     MPAPageViewController *pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pageVC"];
     pageVC.currentUser = currentUser;

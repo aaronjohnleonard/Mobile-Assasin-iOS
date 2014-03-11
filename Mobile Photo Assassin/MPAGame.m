@@ -15,6 +15,7 @@
       hasStarted:(BOOL)hasStarted
             name:(NSString*)name
       numPlayers:(NSInteger)numPlayers
+       creatorId:(NSInteger)creatorId
 {
     self = [super init];
     if (self) {
@@ -23,6 +24,7 @@
         _hasStarted = hasStarted;
         _gameName = name;
         _numPlayers = numPlayers;
+        _creatorId = creatorId;
     }
     return self;
 }

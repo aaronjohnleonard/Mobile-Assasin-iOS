@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSArray *targets;
 @property (strong, nonatomic) UIImage *photo;
+@property (nonatomic) NSInteger userId;
 
 // used for assassinating
 @property (strong, nonatomic) NSString *gameId;
@@ -28,6 +29,7 @@
                username:(NSString *)username
                   email:(NSString *)email
                 targets:(NSArray *)targets
-                  photo:(UIImage*)photo;
+                  photo:(UIImage*)photo
+                 userId:(NSInteger)userId;
 
 @end

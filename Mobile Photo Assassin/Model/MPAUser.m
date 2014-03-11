@@ -27,7 +27,8 @@
                username:(NSString *)username
                   email:(NSString *)email
                 targets:(NSArray *)targets
-                  photo:(UIImage*)photo{
+                  photo:(UIImage*)photo
+                 userId:(NSInteger)userId{
     self = [super init];
     if (self) {
         _firstName = firstName;
@@ -36,6 +37,7 @@
         _email = email;
         _targets = targets;
         _photo = photo;
+        _userId = userId;
     }
     return self;
 }
