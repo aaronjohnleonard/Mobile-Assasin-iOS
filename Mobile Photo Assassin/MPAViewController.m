@@ -169,8 +169,7 @@
     MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[info valueForKey:@"firstName"]
                                                      lastName:[info valueForKey:@"lastName"]
                                                      username:[info valueForKey:@"username"]
-                            
-                                         email:[info valueForKey:@"email"]
+                                                        email:[info valueForKey:@"email"]
                                                       targets:targetObjects
                                                         photo:userPhoto
                                                        userId:[[info valueForKey:@"memberId"] intValue]];
