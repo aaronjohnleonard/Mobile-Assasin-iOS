@@ -7,7 +7,7 @@
 //
 
 #import "MPAViewController.h"
-#import "MPAHomeViewController.h"
+#import "MPATargetViewController.h"
 #import "MPASignUpViewController.h"
 #import "MPAPageViewController.h"
 #import "MPANoGameViewController.h"
@@ -161,9 +161,6 @@
     UIImage *userPhoto = [UIImage imageWithData:imageData];
     
     info = [info valueForKey:@"member"];
-    
-    NSString *firstName = [info valueForKey:@"firstName"];
-    
     
     // Create new user using json from server
     MPAUser *currentUser = [[MPAUser alloc] initWithFirstName:[info valueForKey:@"firstName"]

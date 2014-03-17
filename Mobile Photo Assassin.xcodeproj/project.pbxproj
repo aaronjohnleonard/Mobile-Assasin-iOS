@@ -24,7 +24,7 @@
 		3C7195331888A04700AB4A01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C7195151888A04700AB4A01 /* UIKit.framework */; };
 		3C71953B1888A04700AB4A01 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C7195391888A04700AB4A01 /* InfoPlist.strings */; };
 		3C71953D1888A04700AB4A01 /* Mobile_Photo_AssassinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71953C1888A04700AB4A01 /* Mobile_Photo_AssassinTests.m */; };
-		3C71958E1889E99700AB4A01 /* MPAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71958D1889E99700AB4A01 /* MPAHomeViewController.m */; };
+		3C71958E1889E99700AB4A01 /* MPATargetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71958D1889E99700AB4A01 /* MPATargetViewController.m */; };
 		3C719591188A1DA000AB4A01 /* MPASignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719590188A1DA000AB4A01 /* MPASignUpViewController.m */; };
 		3C719594188A5AC400AB4A01 /* MPAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719593188A5AC400AB4A01 /* MPAUser.m */; };
 		3C719599188CC4EF00AB4A01 /* house_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C719598188CC4EF00AB4A01 /* house_black.png */; };
@@ -37,6 +37,7 @@
 		3CB58C6018AD4DD5005313F7 /* MPAPageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB58C5F18AD4DD5005313F7 /* MPAPageDataSource.m */; };
 		640E67F018B55F9D009538E3 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 640E67EF18B55F9D009538E3 /* placeholder.png */; };
 		640E67F218B56669009538E3 /* routes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 640E67F118B56669009538E3 /* routes.txt */; };
+		647F6C7F18D7BBAD00968BAC /* champion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 647F6C7E18D7BBAD00968BAC /* champion.jpg */; };
 		64A532F618A1815F009139F8 /* MPAShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A532F518A1815F009139F8 /* MPAShootViewController.m */; };
 		64E60B1718C3ECCF00CDE931 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E60B1618C3ECCF00CDE931 /* FacebookSDK.framework */; };
 		64E60B2018C3F46B00CDE931 /* MPAShootTargetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E60B1F18C3F46B00CDE931 /* MPAShootTargetViewController.m */; };
@@ -78,8 +79,8 @@
 		3C7195381888A04700AB4A01 /* Mobile Photo AssassinTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mobile Photo AssassinTests-Info.plist"; sourceTree = "<group>"; };
 		3C71953A1888A04700AB4A01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C71953C1888A04700AB4A01 /* Mobile_Photo_AssassinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mobile_Photo_AssassinTests.m; sourceTree = "<group>"; };
-		3C71958C1889E99700AB4A01 /* MPAHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAHomeViewController.h; sourceTree = "<group>"; };
-		3C71958D1889E99700AB4A01 /* MPAHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAHomeViewController.m; sourceTree = "<group>"; };
+		3C71958C1889E99700AB4A01 /* MPATargetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPATargetViewController.h; sourceTree = "<group>"; };
+		3C71958D1889E99700AB4A01 /* MPATargetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPATargetViewController.m; sourceTree = "<group>"; };
 		3C71958F188A1DA000AB4A01 /* MPASignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPASignUpViewController.h; sourceTree = "<group>"; };
 		3C719590188A1DA000AB4A01 /* MPASignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPASignUpViewController.m; sourceTree = "<group>"; };
 		3C719592188A5AC400AB4A01 /* MPAUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAUser.h; path = Model/MPAUser.h; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 		3CB58C5F18AD4DD5005313F7 /* MPAPageDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAPageDataSource.m; sourceTree = "<group>"; };
 		640E67EF18B55F9D009538E3 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		640E67F118B56669009538E3 /* routes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.txt; sourceTree = "<group>"; };
+		647F6C7E18D7BBAD00968BAC /* champion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = champion.jpg; sourceTree = "<group>"; };
 		64A532F418A1815F009139F8 /* MPAShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAShootViewController.h; sourceTree = "<group>"; };
 		64A532F518A1815F009139F8 /* MPAShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAShootViewController.m; sourceTree = "<group>"; };
 		64E60B1618C3ECCF00CDE931 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -185,8 +187,8 @@
 				3C719593188A5AC400AB4A01 /* MPAUser.m */,
 				3C71958F188A1DA000AB4A01 /* MPASignUpViewController.h */,
 				3C719590188A1DA000AB4A01 /* MPASignUpViewController.m */,
-				3C71958C1889E99700AB4A01 /* MPAHomeViewController.h */,
-				3C71958D1889E99700AB4A01 /* MPAHomeViewController.m */,
+				3C71958C1889E99700AB4A01 /* MPATargetViewController.h */,
+				3C71958D1889E99700AB4A01 /* MPATargetViewController.m */,
 				64A532F418A1815F009139F8 /* MPAShootViewController.h */,
 				64A532F518A1815F009139F8 /* MPAShootViewController.m */,
 				3C7195261888A04700AB4A01 /* MPAViewController.h */,
@@ -208,6 +210,7 @@
 		3C7195181888A04700AB4A01 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				647F6C7E18D7BBAD00968BAC /* champion.jpg */,
 				640E67F118B56669009538E3 /* routes.txt */,
 				640E67EF18B55F9D009538E3 /* placeholder.png */,
 				3C94D431189AC0A7009E0E46 /* Join.png */,
@@ -317,6 +320,7 @@
 			files = (
 				3C71952A1888A04700AB4A01 /* Images.xcassets in Resources */,
 				640E67F018B55F9D009538E3 /* placeholder.png in Resources */,
+				647F6C7F18D7BBAD00968BAC /* champion.jpg in Resources */,
 				640E67F218B56669009538E3 /* routes.txt in Resources */,
 				3C71951C1888A04700AB4A01 /* InfoPlist.strings in Resources */,
 				3C7195251888A04700AB4A01 /* Main.storyboard in Resources */,
@@ -342,7 +346,7 @@
 			files = (
 				64E60B2018C3F46B00CDE931 /* MPAShootTargetViewController.m in Sources */,
 				3CB58C6018AD4DD5005313F7 /* MPAPageDataSource.m in Sources */,
-				3C71958E1889E99700AB4A01 /* MPAHomeViewController.m in Sources */,
+				3C71958E1889E99700AB4A01 /* MPATargetViewController.m in Sources */,
 				3C71959F188DD4D600AB4A01 /* MPALocationPicker.m in Sources */,
 				3C719594188A5AC400AB4A01 /* MPAUser.m in Sources */,
 				3C719591188A1DA000AB4A01 /* MPASignUpViewController.m in Sources */,
@@ -492,6 +496,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mobile Photo Assassin/Mobile Photo Assassin-Prefix.pch";
 				INFOPLIST_FILE = "Mobile Photo Assassin/Mobile Photo Assassin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -511,6 +516,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mobile Photo Assassin/Mobile Photo Assassin-Prefix.pch";
 				INFOPLIST_FILE = "Mobile Photo Assassin/Mobile Photo Assassin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

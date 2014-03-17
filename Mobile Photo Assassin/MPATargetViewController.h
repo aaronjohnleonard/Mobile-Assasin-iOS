@@ -10,7 +10,7 @@
 #import "MPAUser.h"
 #import "MPAPageViewController.h"
 
-@interface MPAHomeViewController : UIViewController
+@interface MPATargetViewController : UIViewController
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) MPAUser *user;
 @property (strong, nonatomic) NSString *gameId;

@@ -14,7 +14,7 @@
 @property (strong, nonatomic) NSString *lastName;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *email;
-@property (strong, nonatomic) NSArray *targets;
+@property (strong, nonatomic) NSMutableArray *targets;
 @property (strong, nonatomic) UIImage *photo;
 @property (nonatomic) NSInteger userId;
 

@@ -7,7 +7,7 @@
 //
 
 #import "MPAPageViewController.h"
-#import "MPAHomeViewController.h"
+#import "MPATargetViewController.h"
 #import "MPAMenuViewController.h"
 #import "MPAPageDataSource.h"
 
@@ -37,13 +37,13 @@
     self.data.pageVC = self;
     self.targetVCs = [[NSMutableArray alloc] init];
     for (int i = 0; i < [self.currentUser.targets count]; i++) {
-        MPAHomeViewController *homeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
-        homeVC.username = self.currentUser.username;
-        homeVC.user = self.currentUser;
-        homeVC.pageVC = self;
-        homeVC.targetIndex = i;
-        homeVC.gameId = ((MPAUser *)self.currentUser.targets[i]).gameId;
-        [self.targetVCs addObject:homeVC];
+        MPATargetViewController *targetVC = [self.storyboard instantiateViewControllerWithIdentifier:@"TargetVC"];
+        targetVC.username = self.currentUser.username;
+        targetVC.user = self.currentUser;
+        targetVC.pageVC = self;
+        targetVC.targetIndex = i;
+        targetVC.gameId = ((MPAUser *)self.currentUser.targets[i]).gameId;
+        [self.targetVCs addObject:targetVC];
     }
     self.menuVC = [self.storyboard instantiateViewControllerWithIdentifier:@"menuVC"];
     self.menuVC.user = self.currentUser;
