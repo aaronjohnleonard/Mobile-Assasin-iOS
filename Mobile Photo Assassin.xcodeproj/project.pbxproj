@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E9BDDD418DE1DB500439881 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E9BDDD318DE1DB500439881 /* FacebookSDK.framework */; };
 		2EEE40EF18B9307A0020AD0B /* MPAGameCreatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEE40EE18B9307A0020AD0B /* MPAGameCreatorController.m */; };
 		3C64685B18A6E06F00C545E7 /* MPAPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64685A18A6E06F00C545E7 /* MPAPageViewController.m */; };
 		3C64685E18A6E2CF00C545E7 /* MPAMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C64685D18A6E2CF00C545E7 /* MPAMenuViewController.m */; };
@@ -39,7 +40,6 @@
 		640E67F218B56669009538E3 /* routes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 640E67F118B56669009538E3 /* routes.txt */; };
 		647F6C7F18D7BBAD00968BAC /* champion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 647F6C7E18D7BBAD00968BAC /* champion.jpg */; };
 		64A532F618A1815F009139F8 /* MPAShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A532F518A1815F009139F8 /* MPAShootViewController.m */; };
-		64E60B1718C3ECCF00CDE931 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E60B1618C3ECCF00CDE931 /* FacebookSDK.framework */; };
 		64E60B2018C3F46B00CDE931 /* MPAShootTargetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E60B1F18C3F46B00CDE931 /* MPAShootTargetViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E9BDDD318DE1DB500439881 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		2EEE40ED18B9307A0020AD0B /* MPAGameCreatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAGameCreatorController.h; sourceTree = "<group>"; };
 		2EEE40EE18B9307A0020AD0B /* MPAGameCreatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAGameCreatorController.m; sourceTree = "<group>"; };
 		3C64685918A6E06F00C545E7 /* MPAPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAPageViewController.h; sourceTree = "<group>"; };
@@ -104,7 +105,6 @@
 		647F6C7E18D7BBAD00968BAC /* champion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = champion.jpg; sourceTree = "<group>"; };
 		64A532F418A1815F009139F8 /* MPAShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAShootViewController.h; sourceTree = "<group>"; };
 		64A532F518A1815F009139F8 /* MPAShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAShootViewController.m; sourceTree = "<group>"; };
-		64E60B1618C3ECCF00CDE931 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		64E60B1E18C3F46B00CDE931 /* MPAShootTargetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAShootTargetViewController.h; sourceTree = "<group>"; };
 		64E60B1F18C3F46B00CDE931 /* MPAShootTargetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAShootTargetViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C7195141888A04700AB4A01 /* CoreGraphics.framework in Frameworks */,
-				64E60B1718C3ECCF00CDE931 /* FacebookSDK.framework in Frameworks */,
+				2E9BDDD418DE1DB500439881 /* FacebookSDK.framework in Frameworks */,
 				3C7195161888A04700AB4A01 /* UIKit.framework in Frameworks */,
 				3C7195121888A04700AB4A01 /* Foundation.framework in Frameworks */,
 			);
@@ -137,6 +137,7 @@
 		3C7195051888A04700AB4A01 = {
 			isa = PBXGroup;
 			children = (
+				2E9BDDD318DE1DB500439881 /* FacebookSDK.framework */,
 				3C7195171888A04700AB4A01 /* Mobile Photo Assassin */,
 				3C7195361888A04700AB4A01 /* Mobile Photo AssassinTests */,
 				3C7195101888A04700AB4A01 /* Frameworks */,
@@ -156,7 +157,6 @@
 		3C7195101888A04700AB4A01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				64E60B1618C3ECCF00CDE931 /* FacebookSDK.framework */,
 				3C7195111888A04700AB4A01 /* Foundation.framework */,
 				3C7195131888A04700AB4A01 /* CoreGraphics.framework */,
 				3C7195151888A04700AB4A01 /* UIKit.framework */,
@@ -490,8 +490,15 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/aaronleonard/Mobile\\ Photo\\ Assassin",
+					/Users/aaronleonard/Mobile,
+					Photo,
+					Assassin,
 					"/Users/jcalebcall/Documents/CS428/Mobile-Assasin-iOS",
+					"$(PROJECT_DIR)",
+					/Users/alderkr/Google,
+					Drive/Documents/FacebookSDK,
+					/Users/alderkr/Google,
+					Drive/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mobile Photo Assassin/Mobile Photo Assassin-Prefix.pch";
@@ -510,8 +517,15 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/aaronleonard/Mobile\\ Photo\\ Assassin",
+					/Users/aaronleonard/Mobile,
+					Photo,
+					Assassin,
 					"/Users/jcalebcall/Documents/CS428/Mobile-Assasin-iOS",
+					"$(PROJECT_DIR)",
+					/Users/alderkr/Google,
+					Drive/Documents/FacebookSDK,
+					/Users/alderkr/Google,
+					Drive/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mobile Photo Assassin/Mobile Photo Assassin-Prefix.pch";

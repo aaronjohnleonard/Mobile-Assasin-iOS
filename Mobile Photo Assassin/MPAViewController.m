@@ -138,6 +138,17 @@
         return;
     }
     
+    // Get a list of all games for the current user.
+    NSArray *allGamesData = [info valueForKey:@"games"];
+    NSMutableArray* unstartedGames = [[NSMutableArray alloc] init];
+    
+    // Filter out games that have already been started.
+    for (int i = 0; i < [allGamesData count]; i++) {
+        if([[allGamesData[i] valueForKey:@"hasStarted"] isEqualToNumber: @0]) {
+            [unstartedGames addObject:allGamesData[i]];
+        }
+    }
+    
     NSArray *targetsData = [info valueForKey:@"targets"];
     
     NSMutableArray *targetObjects = [[NSMutableArray alloc] init];
@@ -174,6 +185,7 @@
     MPAPageViewController *pageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"pageVC"];
     pageVC.currentUser = currentUser;
     pageVC.loginVC = self;
+    pageVC.pendingGames = unstartedGames;
     [self presentViewController:pageVC animated:YES completion:nil];
 
     

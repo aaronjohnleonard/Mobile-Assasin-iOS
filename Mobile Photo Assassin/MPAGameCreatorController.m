@@ -60,7 +60,6 @@
     }
     
     // Set the POST parameters.
-    // TODO: don't have max_size and gameType hardcoded
     NSMutableDictionary* _params = [[NSMutableDictionary alloc] init];
     [_params setObject:self.maxPlayers.text forKey:@"max_size"];
     [_params setObject:self.gameName.text forKey:@"gameName"];
@@ -92,8 +91,6 @@
     // Attach the body data to the request.
     [request setHTTPBody:body];
     
-    
-    
     // Make the request.
     NSData *urlData;
     NSURLResponse *response;
@@ -104,8 +101,25 @@
                                                 error:&error];
     
     NSString *replyString = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
-    
-    NSLog(@"%@", replyString);
+
+    if ([replyString isEqualToString: @"Successfully created game"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Game Created"
+                                                        message:@"Your game was created successfully."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        // Kill this screen.
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error"
+                                                        message:@"Unable to connect to Mobile Assassin server."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
 }
 
 @end
