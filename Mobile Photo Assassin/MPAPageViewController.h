@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) MPAUser *currentUser;
 @property (strong, nonatomic) MPAViewController *loginVC;
+@property (strong, nonatomic) NSMutableArray* pendingGames;
 
 - (UIViewController*) before:(UIViewController*)controller;
 - (UIViewController*) after:(UIViewController*)controller;

@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 Aaron Leonard. All rights reserved.
 //
 
-#import "MPAHomeViewController.h"
+#import "MPATargetViewController.h"
 #import "MPAViewController.h"
 #import "MPAPageViewController.h"
 #import "MPAShootTargetViewController.h"
 
-@interface MPAHomeViewController ()
+@interface MPATargetViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *target;
 @property (strong, nonatomic) IBOutlet UIImageView *targetImage;
 @property (weak, nonatomic) IBOutlet UIPageControl *dots;
 @end
 
-@implementation MPAHomeViewController
+@implementation MPATargetViewController
 
 - (void)viewDidLoad
 {
@@ -27,6 +27,7 @@
     self.usernameLabel.text = self.username;
     self.target.text = [NSString stringWithFormat:@"Target: %@",((MPAUser*)self.user.targets[self.targetIndex]).firstName];
     
+    self.targetImage.contentMode = UIViewContentModeScaleAspectFit;
     [self.targetImage setImage:((MPAUser*)self.user.targets[self.targetIndex]).photo];
     
     self.dots.numberOfPages = [self.pageVC numPages];
@@ -54,12 +55,14 @@
 - (IBAction)shootTarget {
     MPAShootTargetViewController *shootVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ShootTargetVC"];
     shootVC.gameId = self.gameId;
+    shootVC.targetVC = self;
     [self presentViewController:shootVC animated:YES completion:nil];
 }
 
 - (IBAction)logoutTapped:(id)sender {
     [self.pageVC logoutTapped];
 }
+
 
 
 @end

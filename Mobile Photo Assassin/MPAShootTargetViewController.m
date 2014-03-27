@@ -20,9 +20,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.imageView.contentMode =UIViewContentModeScaleAspectFit;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     UIImage *image = [UIImage imageNamed: @"placeholder.png"];
     [self.imageView setImage:image];
+    //[self TakePhoto];
 }
 
 - (IBAction)TakePhoto {
@@ -117,17 +118,21 @@
     
     NSLog(@"%@", replyString);
     
-    NSDictionary *info = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:nil];
+    NSDictionary *targetData = [NSJSONSerialization JSONObjectWithData:urlData options:0 error:nil];
     
     // If the json doesn't have user information, send alert to user
-    if (info == nil) {
+    if (targetData == nil) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                         message:@"Assassination successful. You win!"
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
-        return;
+        UIImage *winnerPhoto = [UIImage imageNamed: @"champion.jpg"];
+        MPAUser *winner = [[MPAUser alloc] initWithName:@"YOU WIN!" photo:winnerPhoto gameId:self.targetVC.gameId];
+        self.targetVC.user.targets[self.targetVC.targetIndex] = winner;
+        [self.targetVC viewDidLoad];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     else {
         
@@ -137,6 +142,20 @@
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
+        
+        targetData = [targetData valueForKey:@"target"];
+        
+        // create the new target and replace the old one in the target array for the user
+        NSString *targetName = [targetData valueForKey:@"firstName"];
+        id targetID = [targetData valueForKey:@"memberId"];
+        
+        NSURL *imageurl = [NSURL URLWithString:[NSString stringWithFormat:@"http://54.200.120.14:8080/member/photo/%@",targetID]];
+        NSData *imageData = [[NSData alloc] initWithContentsOfURL:imageurl];
+        UIImage *targetPhoto = [UIImage imageWithData:imageData];
+        MPAUser *target = [[MPAUser alloc] initWithName:targetName photo:targetPhoto gameId:self.targetVC.gameId];
+        
+        self.targetVC.user.targets[self.targetVC.targetIndex] = target;
+        [self.targetVC viewDidLoad];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

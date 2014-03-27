@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPATargetViewController.h"
 
 @interface MPAShootTargetViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) NSString *gameId;
+@property (strong, nonatomic) MPATargetViewController *targetVC;
 
 @end

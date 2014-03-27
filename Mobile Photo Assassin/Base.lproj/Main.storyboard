@@ -309,10 +309,10 @@
             </objects>
             <point key="canvasLocation" x="1471" y="-1043"/>
         </scene>
-        <!--Home View Controller - Home-->
+        <!--Target View Controller - Home-->
         <scene sceneID="4NS-lV-sQN">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="M1P-QE-k9S" customClass="MPAHomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TargetVC" id="M1P-QE-k9S" customClass="MPATargetViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IeC-bF-I0s"/>
                         <viewControllerLayoutGuide type="bottom" id="fpe-KN-XvC"/>

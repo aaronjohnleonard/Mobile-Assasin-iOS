@@ -26,7 +26,7 @@
                lastName:(NSString *)lastName
                username:(NSString *)username
                   email:(NSString *)email
-                targets:(NSArray *)targets
+                targets:(NSMutableArray *)targets
                   photo:(UIImage*)photo
                  userId:(NSInteger)userId{
     self = [super init];
