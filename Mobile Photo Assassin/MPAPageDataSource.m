@@ -20,5 +20,15 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     return [(MPAPageViewController*)pageViewController after:viewController];
 }
+//
+//- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+//{
+//    return [(MPAPageViewController*)pageViewController presentationCountForPageViewController:pageViewController];
+//}
+//
+//- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+//{
+//    return [(MPAPageViewController*)pageViewController presentationIndexForPageViewController:pageViewController];
+//}
 
 @end

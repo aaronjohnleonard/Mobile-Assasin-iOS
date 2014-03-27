@@ -11,11 +11,13 @@
 @implementation MPAGame
 
 - (id)initWithId:(NSInteger)Id
-       completed:(BOOL)completed
-      hasStarted:(BOOL)hasStarted
+       completed:(NSInteger)completed
+      hasStarted:(NSInteger)hasStarted
             name:(NSString*)name
       numPlayers:(NSInteger)numPlayers
        creatorId:(NSInteger)creatorId
+        joinable:(BOOL)joinable
+       startable:(BOOL)startable
 {
     self = [super init];
     if (self) {
@@ -25,6 +27,8 @@
         _gameName = name;
         _numPlayers = numPlayers;
         _creatorId = creatorId;
+        _joinable = joinable;
+        _startable = startable;
     }
     return self;
 }

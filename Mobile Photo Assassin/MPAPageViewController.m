@@ -91,6 +91,24 @@
         return self.targetVCs[index + 1];
     }
 }
+//
+//- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+//{
+//    return [self.targetVCs count] + 1;
+//}
+//
+//- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+//{
+//    return 0;
+//}
+
+- (NSInteger)numPages{
+    return [self.targetVCs count] + 1;
+}
+
+- (NSInteger)currentPageForViewController:(MPAHomeViewController*)targetVC{
+    return [self.targetVCs indexOfObject:targetVC] + 1;
+}
 
 - (IBAction)logoutTapped{
     [self performSegueWithIdentifier:@"unwindToWelcome" sender:self];

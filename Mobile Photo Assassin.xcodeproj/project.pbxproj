@@ -27,11 +27,14 @@
 		3C71958E1889E99700AB4A01 /* MPAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71958D1889E99700AB4A01 /* MPAHomeViewController.m */; };
 		3C719591188A1DA000AB4A01 /* MPASignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719590188A1DA000AB4A01 /* MPASignUpViewController.m */; };
 		3C719594188A5AC400AB4A01 /* MPAUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C719593188A5AC400AB4A01 /* MPAUser.m */; };
-		3C719599188CC4EF00AB4A01 /* house_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C719598188CC4EF00AB4A01 /* house_black.png */; };
 		3C71959F188DD4D600AB4A01 /* MPALocationPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C71959E188DD4D600AB4A01 /* MPALocationPicker.m */; };
 		3C94D430189AA6BE009E0E46 /* MPANoGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C94D42F189AA6BE009E0E46 /* MPANoGameViewController.m */; };
 		3C94D432189AC0A7009E0E46 /* Join.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C94D431189AC0A7009E0E46 /* Join.png */; };
 		3C94D435189B63F7009E0E46 /* MPATestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C94D434189B63F7009E0E46 /* MPATestViewController.m */; };
+		3C9A0B7518DFF972007BBC3F /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9A0B7418DFF972007BBC3F /* logo.png */; };
+		3C9A0B7718DFF980007BBC3F /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9A0B7618DFF980007BBC3F /* background.png */; };
+		3C9A0B7918E00221007BBC3F /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9A0B7818E00221007BBC3F /* target.png */; };
+		3C9A0B7B18E00B15007BBC3F /* PhoneGun.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 3C9A0B7A18E00B15007BBC3F /* PhoneGun.PNG */; };
 		3CB356C018BDACFA00A7A4A8 /* MPAJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB356BF18BDACFA00A7A4A8 /* MPAJoinViewController.m */; };
 		3CB356C318BDB14600A7A4A8 /* MPAGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB356C218BDB14600A7A4A8 /* MPAGame.m */; };
 		3CB58C6018AD4DD5005313F7 /* MPAPageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB58C5F18AD4DD5005313F7 /* MPAPageDataSource.m */; };
@@ -84,7 +87,6 @@
 		3C719590188A1DA000AB4A01 /* MPASignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPASignUpViewController.m; sourceTree = "<group>"; };
 		3C719592188A5AC400AB4A01 /* MPAUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPAUser.h; path = Model/MPAUser.h; sourceTree = "<group>"; };
 		3C719593188A5AC400AB4A01 /* MPAUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPAUser.m; path = Model/MPAUser.m; sourceTree = "<group>"; };
-		3C719598188CC4EF00AB4A01 /* house_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house_black.png; sourceTree = "<group>"; };
 		3C71959D188DD4D600AB4A01 /* MPALocationPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPALocationPicker.h; sourceTree = "<group>"; };
 		3C71959E188DD4D600AB4A01 /* MPALocationPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPALocationPicker.m; sourceTree = "<group>"; };
 		3C94D42E189AA6BE009E0E46 /* MPANoGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPANoGameViewController.h; sourceTree = "<group>"; };
@@ -92,6 +94,10 @@
 		3C94D431189AC0A7009E0E46 /* Join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Join.png; sourceTree = "<group>"; };
 		3C94D433189B63F7009E0E46 /* MPATestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPATestViewController.h; sourceTree = "<group>"; };
 		3C94D434189B63F7009E0E46 /* MPATestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPATestViewController.m; sourceTree = "<group>"; };
+		3C9A0B7418DFF972007BBC3F /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		3C9A0B7618DFF980007BBC3F /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		3C9A0B7818E00221007BBC3F /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
+		3C9A0B7A18E00B15007BBC3F /* PhoneGun.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PhoneGun.PNG; sourceTree = "<group>"; };
 		3CB356BE18BDACFA00A7A4A8 /* MPAJoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAJoinViewController.h; sourceTree = "<group>"; };
 		3CB356BF18BDACFA00A7A4A8 /* MPAJoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAJoinViewController.m; sourceTree = "<group>"; };
 		3CB356C118BDB14600A7A4A8 /* MPAGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAGame.h; sourceTree = "<group>"; };
@@ -208,10 +214,13 @@
 		3C7195181888A04700AB4A01 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C9A0B7A18E00B15007BBC3F /* PhoneGun.PNG */,
+				3C9A0B7818E00221007BBC3F /* target.png */,
+				3C9A0B7618DFF980007BBC3F /* background.png */,
+				3C9A0B7418DFF972007BBC3F /* logo.png */,
 				640E67F118B56669009538E3 /* routes.txt */,
 				640E67EF18B55F9D009538E3 /* placeholder.png */,
 				3C94D431189AC0A7009E0E46 /* Join.png */,
-				3C719598188CC4EF00AB4A01 /* house_black.png */,
 				3C7195191888A04700AB4A01 /* Mobile Photo Assassin-Info.plist */,
 				3C71951A1888A04700AB4A01 /* InfoPlist.strings */,
 				3C71951D1888A04700AB4A01 /* main.m */,
@@ -316,12 +325,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C71952A1888A04700AB4A01 /* Images.xcassets in Resources */,
+				3C9A0B7718DFF980007BBC3F /* background.png in Resources */,
 				640E67F018B55F9D009538E3 /* placeholder.png in Resources */,
+				3C9A0B7B18E00B15007BBC3F /* PhoneGun.PNG in Resources */,
 				640E67F218B56669009538E3 /* routes.txt in Resources */,
 				3C71951C1888A04700AB4A01 /* InfoPlist.strings in Resources */,
+				3C9A0B7918E00221007BBC3F /* target.png in Resources */,
+				3C9A0B7518DFF972007BBC3F /* logo.png in Resources */,
 				3C7195251888A04700AB4A01 /* Main.storyboard in Resources */,
 				3C94D432189AC0A7009E0E46 /* Join.png in Resources */,
-				3C719599188CC4EF00AB4A01 /* house_black.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

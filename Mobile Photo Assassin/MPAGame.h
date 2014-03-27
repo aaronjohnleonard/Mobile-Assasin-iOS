@@ -18,12 +18,16 @@
 @property (nonatomic) NSString* gameName;
 @property (nonatomic) NSInteger numPlayers;
 @property (nonatomic) NSInteger creatorId;
+@property (nonatomic) BOOL joinable;
+@property (nonatomic) BOOL startable;
 
 - (id)initWithId:(NSInteger)Id
-       completed:(BOOL)completed
-      hasStarted:(BOOL)hasStarted
+       completed:(NSInteger)completed
+      hasStarted:(NSInteger)hasStarted
             name:(NSString*)name
       numPlayers:(NSInteger)numPlayers
-       creatorId:(NSInteger)creatorId;
+       creatorId:(NSInteger)creatorId
+        joinable:(BOOL)joinable
+       startable:(BOOL)startable;
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MPAUser.h"
 #import "MPAViewController.h"
+//#import "MPAHomeViewController.h"
 
 @interface MPAPageViewController : UIPageViewController
 
@@ -17,6 +18,11 @@
 
 - (UIViewController*) before:(UIViewController*)controller;
 - (UIViewController*) after:(UIViewController*)controller;
+//- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController;
+//- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController;
+
+- (NSInteger)numPages;
+- (NSInteger)currentPageForViewController:targetVC;
 
 - (IBAction)logoutTapped;
 

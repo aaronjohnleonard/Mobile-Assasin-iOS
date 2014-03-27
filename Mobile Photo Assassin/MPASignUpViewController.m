@@ -35,6 +35,8 @@
     self.email.delegate = (id)self;
     self.login = [[FBLoginView alloc] initWithReadPermissions:@[@"basic_info"]];
     self.login.delegate = self;
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.view.backgroundColor = background;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

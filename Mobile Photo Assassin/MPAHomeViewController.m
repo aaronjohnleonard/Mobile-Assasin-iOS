@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *target;
 @property (strong, nonatomic) IBOutlet UIImageView *targetImage;
+@property (weak, nonatomic) IBOutlet UIPageControl *dots;
 @end
 
 @implementation MPAHomeViewController
@@ -24,10 +25,15 @@
     [super viewDidLoad];
     
     self.usernameLabel.text = self.username;
-    self.target.text = ((MPAUser*)self.user.targets[self.targetIndex]).firstName;
+    self.target.text = [NSString stringWithFormat:@"Target: %@",((MPAUser*)self.user.targets[self.targetIndex]).firstName];
     
     [self.targetImage setImage:((MPAUser*)self.user.targets[self.targetIndex]).photo];
     
+    self.dots.numberOfPages = [self.pageVC numPages];
+    self.dots.currentPage = [self.pageVC currentPageForViewController:self];
+    
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.view.backgroundColor = background;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

@@ -70,6 +70,8 @@
     self.currentUser = [[MPAUser alloc]init];
     self.email.delegate = (id)self;
     self.password.delegate = (id)self;
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.view.backgroundColor = background;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -161,8 +163,6 @@
     UIImage *userPhoto = [UIImage imageWithData:imageData];
     
     info = [info valueForKey:@"member"];
-    
-    NSString *firstName = [info valueForKey:@"firstName"];
     
     
     // Create new user using json from server
