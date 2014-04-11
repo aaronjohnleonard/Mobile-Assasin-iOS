@@ -106,7 +106,7 @@
     return [self.targetVCs count] + 1;
 }
 
-- (NSInteger)currentPageForViewController:(MPAHomeViewController*)targetVC{
+- (NSInteger)currentPageForViewController:(MPATargetViewController*)targetVC{
     return [self.targetVCs indexOfObject:targetVC] + 1;
 }
 
